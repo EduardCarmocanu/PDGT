@@ -95,8 +95,20 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <BundleResource Include="Resources\SEGUISB.TTF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\SEGOEUI.TTF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\SEGOEUIB.TTF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\LaunchImages.launchimage\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
