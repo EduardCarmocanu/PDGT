@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using PDGT.Pages;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace PDGT
@@ -11,10 +12,11 @@ namespace PDGT
 		{
 			InitializeComponent();
 
-			MainPage = new MainPage();
+			MainPage = new NavigationPage (new MainPage());
 		}
 
-		protected override void OnStart()
+
+        protected override void OnStart()
 		{
 			// Handle when your app starts
 		}

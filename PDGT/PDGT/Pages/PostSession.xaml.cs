@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace PDGT.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class DefaultPage : ContentPage
+	public partial class PostSession : ContentPage
 	{
-		public DefaultPage ()
+		public PostSession ()
 		{
 			InitializeComponent ();
 		}

@@ -108,6 +108,15 @@
                 <Setter Property="FontFamily" Value="{StaticResource RegularFontFamily}"/>
                 <Setter Property="FontSize" Value="{StaticResource InputTextFontSize}"/>
             </Style>
+            
+            <!-- Navigation bar-->
+            <ControlTemplate x:Key="navbar">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Button Text="Home"/>
+                    <Button Text="Training" />
+                    <Button Text="Questions" />
+                </StackLayout>
+            </ControlTemplate>
 
         </ResourceDictionary>
     </Application.Resources>
