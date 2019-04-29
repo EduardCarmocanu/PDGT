@@ -12,7 +12,6 @@ namespace PDGT.Pages
         public SessionPage()
         {
             InitializeComponent();
-
             var images = new List<string>
            {
               "Weight.png",
@@ -28,7 +27,16 @@ namespace PDGT.Pages
                 "3"
             };
 
-            CarouselViews.ItemsSource = views;
+            var titles = new SessionView
+            {
+                sicktest.SessionTitle = "Test title",
+                Sets = 3,
+                Reps = 10,
+                WeightInKg = 5 + "kg"
+            };
+
+
+            CarouselViews.ItemsSource = titles.ToString();
         }
 
 

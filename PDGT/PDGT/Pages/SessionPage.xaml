@@ -30,11 +30,17 @@
                Grid.Row="0"
                Grid.Column="5"
                Grid.ColumnSpan="2"/>
-        
+        <Label x:Name="sicktest"
+               Text="{Binding SessionTitle}"
+               BackgroundColor="Yellow"
+               WidthRequest="20"
+               HeightRequest="20"
+               />
+
         <cv:CarouselViewControl x:Name="CarouselViews"
                                 Grid.Row="2"
                                 Grid.ColumnSpan="7"
-                                ItemsSource="CarouselViews"
+                                ItemsSource="{Binding SessionView}"
                                 ShowArrows="False"
                                 ShowIndicators="True"
                                 Orientation="Horizontal">
@@ -58,23 +64,23 @@
 
                         <Label x:Name="NameOfExercise"
                                Style="{StaticResource NameOfExerciseLabel}"
-                               Text="{ Binding SessionView.SessionTitle }"
+                               Text="{ Binding SessionTitle }"
                                Grid.Row="0"
                                Grid.ColumnSpan="3"/>
 
                         <Label x:Name="NoOfSets"
                                Style="{StaticResource BodyTextLabel}"
-                               Text="Sets: 3"
+                               
                                Grid.Row="1"/>
 
                         <Label x:Name="NoOfReps"
                                Style="{StaticResource BodyTextLabel}"
-                               Text="Reps/set: 10"
+                              
                                Grid.Row="2"/>
 
                         <Label x:Name="Weight"
                                Style="{StaticResource ActiveColorLabel}"
-                               Text="Weight/kg"
+                               
                                Grid.Row="4"
                                Grid.Column="0"
                                HorizontalOptions="Center"/>

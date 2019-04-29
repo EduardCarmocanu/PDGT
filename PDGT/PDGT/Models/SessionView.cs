@@ -7,8 +7,8 @@ namespace PDGT.Models
     class SessionView
     {
         public string SessionTitle { get; set; }
-        public string Sets { get; set; }
-        public string Reps { get; set; }
+        public int Sets { get; set; }
+        public int Reps { get; set; }
         public string WeightInKg { get; set; }
     }
 }
