@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="http://xamarin.com/schemas/2014/forms/design"
+             x:Class="PDGT.Pages.SessionPage"
+             xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             xmlns:globalization="clr-namespace:System.Globalization;assembly=netstandard"
+             BackgroundColor="{StaticResource BackgoundColor}">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="PeriodOfTimeLabel" 
+               Text="March - Week 11"
+               Grid.Row="0"
+               Grid.Column="5"
+               Grid.ColumnSpan="2"/>
+        
+        <cv:CarouselViewControl x:Name="CarouselViews"
+                                Grid.Row="2"
+                                Grid.ColumnSpan="7"
+                                ItemsSource="CarouselViews"
+                                ShowArrows="False"
+                                ShowIndicators="True"
+                                Orientation="Horizontal">
+            <cv:CarouselViewControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="20"
+                          BackgroundColor="{StaticResource MediumGray}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="3*" />
+                            <RowDefinition Height="2*" />
+                            <RowDefinition Height="3*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label x:Name="NameOfExercise"
+                               Style="{StaticResource NameOfExerciseLabel}"
+                               Text="{ Binding SessionView.SessionTitle }"
+                               Grid.Row="0"
+                               Grid.ColumnSpan="3"/>
+
+                        <Label x:Name="NoOfSets"
+                               Style="{StaticResource BodyTextLabel}"
+                               Text="Sets: 3"
+                               Grid.Row="1"/>
+
+                        <Label x:Name="NoOfReps"
+                               Style="{StaticResource BodyTextLabel}"
+                               Text="Reps/set: 10"
+                               Grid.Row="2"/>
+
+                        <Label x:Name="Weight"
+                               Style="{StaticResource ActiveColorLabel}"
+                               Text="Weight/kg"
+                               Grid.Row="4"
+                               Grid.Column="0"
+                               HorizontalOptions="Center"/>
+
+                        <Image Source="Weight.png"
+                               Grid.Row="5"
+                               Grid.Column="0"
+                               HorizontalOptions="Center"/>
+
+                        <Button x:Name="GuideBtn"
+                                Style="{StaticResource GuideButton}"
+                                Text="View guide"
+                                CornerRadius="30"
+                                Grid.Row="5"
+                                Grid.Column="2"
+                                Clicked="GuideBtn_Clicked"/>
+                    </Grid>
+            </DataTemplate>               
+            </cv:CarouselViewControl.ItemTemplate>
+        </cv:CarouselViewControl>
+    
+    </Grid>
+</ContentPage>
+
+    
