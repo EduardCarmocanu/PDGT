@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDGT.Android", "PDGT\PDGT.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDGT.iOS", "PDGT\PDGT.iOS\PDGT.iOS.csproj", "{07991F4B-4A4E-4CEB-874A-A14C5BFFFFB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDGT", "PDGT\PDGT\PDGT.csproj", "{F9FA0EAC-3315-44A9-A55D-9ECABAB81C67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDGT", "PDGT\PDGT\PDGT.csproj", "{F9FA0EAC-3315-44A9-A55D-9ECABAB81C67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{25CFF053-337A-4D12-AC9F-F2789F3B9925}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{25CFF053-337A-4D12-AC9F-F2789F3B9925}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,9 +81,9 @@ Global
 		{07991F4B-4A4E-4CEB-874A-A14C5BFFFFB5}.AppStore|iPhoneSimulator.ActiveCfg = AppStore|iPhoneSimulator
 		{07991F4B-4A4E-4CEB-874A-A14C5BFFFFB5}.AppStore|iPhoneSimulator.Build.0 = AppStore|iPhoneSimulator
 		{07991F4B-4A4E-4CEB-874A-A14C5BFFFFB5}.AppStore|iPhoneSimulator.Deploy.0 = AppStore|iPhoneSimulator
-		{07991F4B-4A4E-4CEB-874A-A14C5BFFFFB5}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
-		{07991F4B-4A4E-4CEB-874A-A14C5BFFFFB5}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
-		{07991F4B-4A4E-4CEB-874A-A14C5BFFFFB5}.Debug|Any CPU.Deploy.0 = Debug|iPhoneSimulator
+		{07991F4B-4A4E-4CEB-874A-A14C5BFFFFB5}.Debug|Any CPU.ActiveCfg = Debug|iPhone
+		{07991F4B-4A4E-4CEB-874A-A14C5BFFFFB5}.Debug|Any CPU.Build.0 = Debug|iPhone
+		{07991F4B-4A4E-4CEB-874A-A14C5BFFFFB5}.Debug|Any CPU.Deploy.0 = Debug|iPhone
 		{07991F4B-4A4E-4CEB-874A-A14C5BFFFFB5}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{07991F4B-4A4E-4CEB-874A-A14C5BFFFFB5}.Debug|iPhone.Build.0 = Debug|iPhone
 		{07991F4B-4A4E-4CEB-874A-A14C5BFFFFB5}.Debug|iPhone.Deploy.0 = Debug|iPhone

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PDGT.Pages.FatiquePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Are you feeling tired?"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Slider />
+            <Button Text="Continue" />
+            <Button Text="Skip Exercise" />
+            <Label Text="Hvor meget vægt brugte du?" />
+            <Label Text="Hvor mange set fuldførte du?" />
+            <Label Text="Hvor mange repetetioner tog du?" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

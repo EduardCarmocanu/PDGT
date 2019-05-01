@@ -29,21 +29,17 @@
                Text="March - Week 11"
                Grid.Row="0"
                Grid.Column="5"
-               Grid.ColumnSpan="2"/>
-        <Label x:Name="sicktest"
-               Text="{Binding SessionTitle}"
-               BackgroundColor="Yellow"
-               WidthRequest="20"
-               HeightRequest="20"
-               />
+               Grid.ColumnSpan="3"/>
 
+        <!-- ItemsSource="{Binding Path=titles}" -->
         <cv:CarouselViewControl x:Name="CarouselViews"
+                                ItemsSource="{Binding Sessions}"
                                 Grid.Row="2"
                                 Grid.ColumnSpan="7"
-                                ItemsSource="{Binding SessionView}"
                                 ShowArrows="False"
                                 ShowIndicators="True"
-                                Orientation="Horizontal">
+                                Orientation="Horizontal"
+                                HorizontalOptions="Center">
             <cv:CarouselViewControl.ItemTemplate>
                 <DataTemplate>
                     <Grid Padding="20"
@@ -61,30 +57,47 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-
-                        <Label x:Name="NameOfExercise"
+                        
+                        <Label x:Name="NameOfExerciseLabel"
+                               Text="{Binding .SessionTitle}"
                                Style="{StaticResource NameOfExerciseLabel}"
-                               Text="{ Binding SessionTitle }"
                                Grid.Row="0"
                                Grid.ColumnSpan="3"/>
-
-                        <Label x:Name="NoOfSets"
-                               Style="{StaticResource BodyTextLabel}"
-                               
-                               Grid.Row="1"/>
-
-                        <Label x:Name="NoOfReps"
-                               Style="{StaticResource BodyTextLabel}"
-                              
-                               Grid.Row="2"/>
-
-                        <Label x:Name="Weight"
+                        
+                        <Label Text="Sets: "
+                               Grid.Row="1"
+                               Grid.Column="0"/>
+                        
+                        <Label x:Name="SetsLabel"
                                Style="{StaticResource ActiveColorLabel}"
-                               
+                               Text="{Binding .Sets}"
+                               Grid.Row="1"
+                               Grid.Column="1"/>
+
+                        <Label Text="Reps/set: "
+                               Grid.Row="2"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"/>
+
+                        <Label x:Name="RepsLabel"
+                               Style="{StaticResource ActiveColorLabel}"
+                               Text="{ Binding .Reps}"
+                               Grid.Row="2"
+                               Grid.Column="2"/>
+
+                        <Label Style="{StaticResource ActiveColorLabel}"
+                               Text="Weight/kg:"
                                Grid.Row="4"
                                Grid.Column="0"
                                HorizontalOptions="Center"/>
 
+                        <Label x:Name="WeightLabel"
+                               Style="{StaticResource ActiveColorLabel}"
+                               Text="{Binding .WeightInKg}"
+                               Grid.Row="5"
+                               Grid.Column="0"
+                               HorizontalOptions="Center"/>
+                        
                         <Image Source="Weight.png"
                                Grid.Row="5"
                                Grid.Column="0"
@@ -101,8 +114,11 @@
             </DataTemplate>               
             </cv:CarouselViewControl.ItemTemplate>
         </cv:CarouselViewControl>
-    
     </Grid>
 </ContentPage>
+    
+    <!--
+         
+        -->
 
     
