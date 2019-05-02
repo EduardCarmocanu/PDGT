@@ -8,7 +8,7 @@ using PDGT.Pages;
 
 namespace PDGT
 {
-	public partial class MainPage : ContentPage
+	public partial class MainPage : TabbedPage
 	{
 		public MainPage()
 		{
@@ -17,7 +17,7 @@ namespace PDGT
 
         async void Button_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync( new PreSessionPage());
+            await Navigation.PushAsync(new PreSessionPage());
         }
     }
 }

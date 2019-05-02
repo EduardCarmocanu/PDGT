@@ -5,14 +5,6 @@
              NavigationPage.HasNavigationBar="False"
              Title="Pre questions">
     <StackLayout>
-        <Label Text="Icon goes here" HorizontalOptions="Center" />
-        <Label Text="We will start your session with questions. Are you ready?"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        <Button Text="Let'go" />
-        <Button Text="Go back" />
-        <ContentView ControlTemplate="{StaticResource navbar}">
-
-        </ContentView>
+        <Label Text="Carouselview here" HorizontalOptions="CenterAndExpand" />
     </StackLayout>
 </ContentPage>
