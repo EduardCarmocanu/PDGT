@@ -123,6 +123,7 @@
                     <Button Text="Questions" />
                 </StackLayout>
             </ControlTemplate>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

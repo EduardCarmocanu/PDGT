@@ -7,7 +7,8 @@
              xmlns:globalization="clr-namespace:System.Globalization;assembly=netstandard"
              BackgroundColor="{StaticResource BackgoundColor}">
 
-    <Grid Margin="10">
+    <Grid Margin="10"
+          >
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -31,23 +32,25 @@
                Grid.Column="5"
                Grid.ColumnSpan="3"/>
 
-        <!-- ItemsSource="{Binding Path=titles}" -->
+        
+
         <cv:CarouselViewControl x:Name="CarouselViews"
                                 ItemsSource="{Binding Sessions}"
                                 Grid.Row="2"
-                                Grid.ColumnSpan="7"
+                                Grid.ColumnSpan="8"
                                 ShowArrows="False"
                                 ShowIndicators="True"
                                 Orientation="Horizontal"
-                                HorizontalOptions="Center">
+                                Margin="10"
+                                >
             <cv:CarouselViewControl.ItemTemplate>
                 <DataTemplate>
                     <Grid Padding="20"
                           BackgroundColor="{StaticResource MediumGray}">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="2*" />
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="*" />
+                            <RowDefinition Height="3*" />
+                            <RowDefinition Height="1.5*" />
+                            <RowDefinition Height="1.5*" />
                             <RowDefinition Height="3*" />
                             <RowDefinition Height="2*" />
                             <RowDefinition Height="3*"/>
@@ -67,10 +70,9 @@
                         <Label Text="Sets: "
                                Grid.Row="1"
                                Grid.Column="0"/>
-                        
-                        <Label x:Name="SetsLabel"
+
+                        <Label Text="{Binding .Sets}"
                                Style="{StaticResource ActiveColorLabel}"
-                               Text="{Binding .Sets}"
                                Grid.Row="1"
                                Grid.Column="1"/>
 
@@ -79,21 +81,19 @@
                                Grid.Column="0"
                                Grid.ColumnSpan="2"/>
 
-                        <Label x:Name="RepsLabel"
+                        <Label Text="{ Binding .Reps}"
                                Style="{StaticResource ActiveColorLabel}"
-                               Text="{ Binding .Reps}"
                                Grid.Row="2"
-                               Grid.Column="2"/>
+                               Grid.Column="1"/>
 
-                        <Label Style="{StaticResource ActiveColorLabel}"
-                               Text="Weight/kg:"
+                        <Label Text="Weight/kg:"
+                               Style="{StaticResource ActiveColorLabel}"
                                Grid.Row="4"
                                Grid.Column="0"
                                HorizontalOptions="Center"/>
 
-                        <Label x:Name="WeightLabel"
+                        <Label Text="{Binding .WeightInKg}"
                                Style="{StaticResource ActiveColorLabel}"
-                               Text="{Binding .WeightInKg}"
                                Grid.Row="5"
                                Grid.Column="0"
                                HorizontalOptions="Center"/>
@@ -104,9 +104,8 @@
                                HorizontalOptions="Center"/>
 
                         <Button x:Name="GuideBtn"
-                                Style="{StaticResource GuideButton}"
                                 Text="View guide"
-                                CornerRadius="30"
+                                Style="{StaticResource GuideButton}"
                                 Grid.Row="5"
                                 Grid.Column="2"
                                 Clicked="GuideBtn_Clicked"/>
@@ -114,11 +113,15 @@
             </DataTemplate>               
             </cv:CarouselViewControl.ItemTemplate>
         </cv:CarouselViewControl>
+        
+        <Button x:Name="StartSessionButton"
+                Text="Start Session"
+                Style="{StaticResource StartButton}"
+                Grid.Row="3"
+                Grid.ColumnSpan="8"
+                Clicked="StartSessionButton_Clicked"/>
     </Grid>
 </ContentPage>
     
-    <!--
-         
-        -->
-
+    
     

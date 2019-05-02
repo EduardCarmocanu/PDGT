@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
-using PDGT.Pages;
+using PDGT.Models;
 
-namespace PDGT.Models
+namespace PDGT.ViewModels
 {
     public class SessionViewModel
     {
         public ObservableCollection<SessionView> Sessions { get; set; }
-    
+        public List<DateTime> Calender { get; set; }       
+
         public SessionViewModel()
         {
             Sessions = new ObservableCollection<SessionView>
@@ -39,6 +41,26 @@ namespace PDGT.Models
                     }
                     
             };
+               
+            //The Calender
+            //Creating current date
+            DateTime now = DateTime.Now;
+
+            //Creating current day of week
+            int currentDayOfWeek = (int)DateTime.Now.DayOfWeek;
+
+            //Finding Sunday
+            DateTime sunday = now.AddDays(-currentDayOfWeek);
+            DateTime monday = sunday.AddDays(1);
+
+            if (currentDayOfWeek == 0)
+            {
+                monday = monday.AddDays(-7);
+            }
+
+            var dates = (int)((monday - sunday).TotalDays);
+
+            Calender = Enumerable.Range(0, 7).Select(x => monday.AddDays(x)).ToList();
         }
     }
 }

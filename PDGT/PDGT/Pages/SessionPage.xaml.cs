@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using PDGT.Models;
+using PDGT.ViewModels;
 
 namespace PDGT.Pages
 {
@@ -14,16 +14,35 @@ namespace PDGT.Pages
     public partial class SessionPage : ContentPage
 	{
         SessionViewModel _vm;
-
+        
         public SessionPage()
         {
             InitializeComponent();
 
-            BindingContext = _vm = new SessionViewModel();   
+            BindingContext = _vm = new SessionViewModel();
+
+            //Array with name of weekdays
+            var weekDays = new List<string>
+            {
+                "mon",
+                "tue",
+                "wed",
+                "thu",
+                "fri",
+                "sat",
+                "sun"
+            };
+            
+        }
+
+        
+               
+        private void GuideBtn_Clicked(object sender, EventArgs e)
+        {
 
         }
-        
-            private void GuideBtn_Clicked(object sender, EventArgs e)
+
+        private void StartSessionButton_Clicked(object sender, EventArgs e)
         {
 
         }
