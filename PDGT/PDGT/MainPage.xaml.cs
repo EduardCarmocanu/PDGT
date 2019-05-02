@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using PDGT.Pages;
 
 namespace PDGT
 {
@@ -13,5 +14,10 @@ namespace PDGT
 		{
 			InitializeComponent();
 		}
-	}
+
+        async void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync( new PreSessionPage());
+        }
+    }
 }

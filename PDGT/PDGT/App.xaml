@@ -3,6 +3,127 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PDGT.App">
     <Application.Resources>
+        <ResourceDictionary>
+            <!-- Colors -->
+            <Color x:Key="BackgoundColor">#F5F5F5</Color>
+            <Color x:Key="ActiveColor">#993399</Color>
+            <Color x:Key="CtaColor">#52E7B5</Color>
+            <Color x:Key="DarkestGrey">#707070</Color>
+            <Color x:Key="MediumGray">#CCCCCC</Color>
+            <Color x:Key="PlainWhite">#FFF</Color>
 
+            <!-- Font Families -->
+            <OnPlatform x:Key="RegularFontFamily" x:TypeArguments="x:String"
+                 Android="SEGOEUI.TTF#SEGOEUI"
+                 iOS = "SEGOEUI"/>
+            <OnPlatform x:Key="SemiboldFontFamily" x:TypeArguments="x:String"
+                 Android="SEGUISB.TTF#SEGUISB"
+                 iOS="SEGUISB"/>
+            <OnPlatform x:Key="BoldFontFamily" x:TypeArguments="x:String"
+                 Android="SEGOEUIB.TTF#SEGOEUIB"
+                 iOS="SEGOEUIB"/>
+
+            <!-- Font Sizes -->
+            <x:Double x:Key="WeekdaysFontSize">10</x:Double>
+            <x:Double x:Key="InputTextFontSize">11</x:Double>
+            <x:Double x:Key="SmallButtonFontSize">12</x:Double>
+            <x:Double x:Key="XSmallHeadingFontSize">13</x:Double>      
+            <x:Double x:Key="BodyTextFontSize">16</x:Double>
+            <x:Double x:Key="LargeButtonFontSize">18</x:Double>
+            <x:Double x:Key="SmallHeadingFontSize">20</x:Double>
+            <x:Double x:Key="QuestionsFontSize">22</x:Double>
+            <x:Double x:Key="DatesFontSize">24</x:Double>
+            <x:Double x:Key="LatinLettersFontSize">30</x:Double>
+            <x:Double x:Key="MediumHeadingFontSize">40</x:Double>
+            <x:Double x:Key="LargeHeadingFontSize">60</x:Double>
+            <x:Double x:Key="XLargeHeadingFontSize">80</x:Double>
+           
+
+
+            <!-- Styles Buttons -->
+            <Style x:Key="StartButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource CtaColor}"/>
+                <Setter Property="BorderRadius" Value="40"/>
+                <Setter Property="FontFamily" Value="{StaticResource SemiboldFontFamily}"/>
+                <Setter Property="TextColor" Value="{StaticResource PlainWhite}"/>
+                <Setter Property="FontSize" Value="{StaticResource LargeButtonFontSize}"/>
+            </Style>
+            <Style x:Key="GuideButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource DarkestGrey}"/>
+                <Setter Property="BorderRadius" Value="40"/>
+                <Setter Property="FontFamily" Value="{StaticResource RegularFontFamily}"/>
+                <Setter Property="TextColor" Value="{StaticResource PlainWhite}"/>
+                <Setter Property="FontSize" Value="{StaticResource SmallButtonFontSize}"/>
+            </Style>
+
+            <!-- Styles Labels -->
+            <Style x:Key="DayOfWeekLabel" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource RegularFontFamily}"/>
+                <Setter Property="TextColor" Value="{StaticResource DarkestGrey}"/>
+                <Setter Property="FontSize" Value="{StaticResource DatesFontSize}"/>
+            </Style>
+            <Style x:Key="DateLabel" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource RegularFontFamily}"/>
+                <Setter Property="TextColor" Value="{StaticResource DarkestGrey}"/>
+                <Setter Property="FontSize" Value="{StaticResource DatesFontSize}"/>
+            </Style>
+            <Style x:Key="MonthLabel" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource SemiboldFontFamily}"/>
+                <Setter Property="TextColor" Value="{StaticResource DarkestGrey}"/>
+                <Setter Property="FontSize" Value="{StaticResource XSmallHeadingFontSize}"/>
+            </Style>
+            <Style x:Key="NameOfExerciseLabel" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource SemiboldFontFamily}"/>
+                <Setter Property="TextColor" Value="{StaticResource DarkestGrey}"/>
+                <Setter Property="FontSize" Value="{StaticResource SmallHeadingFontSize}"/>
+            </Style>
+            <Style x:Key="BodyTextLabel" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource RegularFontFamily}"/>
+                <Setter Property="TextColor" Value="{StaticResource DarkestGrey}"/>
+                <Setter Property="FontSize" Value="{StaticResource BodyTextFontSize}"/>
+            </Style>
+            <Style x:Key="QuestionTextLabel" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource RegularFontFamily}"/>
+                <Setter Property="TextColor" Value="{StaticResource DarkestGrey}"/>
+                <Setter Property="FontSize" Value="{StaticResource QuestionsFontSize}"/>
+            </Style>
+            <Style x:Key="SessionLabel" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource SemiboldFontFamily}"/>
+                <Setter Property="TextColor" Value="{StaticResource DarkestGrey}"/>
+                <Setter Property="FontSize" Value="{StaticResource MediumHeadingFontSize}"/>
+            </Style>
+            <Style x:Key="ExerciseCountLabel" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource BoldFontFamily}"/>
+                <Setter Property="TextColor" Value="{StaticResource DarkestGrey}"/>
+                <Setter Property="FontSize" Value="{StaticResource XLargeHeadingFontSize}"/>
+            </Style>
+            <Style x:Key="ExerciseDoneLabel" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource BoldFontFamily}"/>
+                <Setter Property="TextColor" Value="{StaticResource DarkestGrey}"/>
+                <Setter Property="FontSize" Value="{StaticResource LargeHeadingFontSize}"/>
+            </Style>
+            <Style x:Key="ActiveColorLabel" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource BoldFontFamily}"/>
+                <Setter Property="TextColor" Value="{StaticResource ActiveColor}"/>
+                <Setter Property="FontSize" Value="{StaticResource BodyTextFontSize}"/>
+            </Style>
+
+            <!-- Input fields -->
+            <Style x:Key="InputField" TargetType="Entry">
+                <Setter Property="PlaceholderColor" Value="{StaticResource PlainWhite}"/>
+                <Setter Property="FontFamily" Value="{StaticResource RegularFontFamily}"/>
+                <Setter Property="FontSize" Value="{StaticResource InputTextFontSize}"/>
+            </Style>
+            
+            <!-- Navigation bar-->
+            <ControlTemplate x:Key="navbar">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Button Text="Home"/>
+                    <Button Text="Training" />
+                    <Button Text="Questions" />
+                </StackLayout>
+            </ControlTemplate>
+            
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

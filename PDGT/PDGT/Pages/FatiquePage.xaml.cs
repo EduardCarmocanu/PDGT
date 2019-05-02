@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace PDGT.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class DefaultPage : ContentPage
+	public partial class FatiquePage : ContentPage
 	{
-		public DefaultPage ()
+		public FatiquePage ()
 		{
 			InitializeComponent ();
 		}

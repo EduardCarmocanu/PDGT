@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PDGT.Pages.PreSessionPage"
+             NavigationPage.HasNavigationBar="False"
+             Title="Pre questions">
+    <StackLayout>
+        <Label Text="Icon goes here" HorizontalOptions="Center" />
+        <Label Text="We will start your session with questions. Are you ready?"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        <Button Text="Let'go" />
+        <Button Text="Go back" />
+        <ContentView ControlTemplate="{StaticResource navbar}">
+
+        </ContentView>
+    </StackLayout>
+</ContentPage>

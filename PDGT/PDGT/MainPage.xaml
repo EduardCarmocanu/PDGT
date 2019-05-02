@@ -3,12 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PDGT"
              x:Class="PDGT.MainPage">
-
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+        <Label Text="Home"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        <Button Text="Start session" Clicked="Button_Clicked"/>
+        <ContentView ControlTemplate="{StaticResource navbar}">
 
+        </ContentView>
+    </StackLayout>
 </ContentPage>
