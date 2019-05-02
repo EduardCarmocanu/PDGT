@@ -9,14 +9,14 @@ namespace PDGT.ViewModels
 {
     public class SessionViewModel
     {
-        public ObservableCollection<SessionView> Sessions { get; set; }
+        public ObservableCollection<SessionModel> Sessions { get; set; }
         public List<DateTime> Calender { get; set; }       
 
         public SessionViewModel()
         {
-            Sessions = new ObservableCollection<SessionView>
+            Sessions = new ObservableCollection<SessionModel>
             {
-                    new SessionView
+                    new SessionModel
                     {
                         SessionTitle = "Rotator cuff strengthening I",
                         Sets = "3",
@@ -24,7 +24,7 @@ namespace PDGT.ViewModels
                         WeightInKg = "3-5"
                     },
 
-                    new SessionView
+                    new SessionModel
                     {
                         SessionTitle = "Rotator cuff strengthening II",
                         Sets = "5",
@@ -32,7 +32,7 @@ namespace PDGT.ViewModels
                         WeightInKg = "3-5"
                     },
 
-                    new SessionView
+                    new SessionModel
                     {
                         SessionTitle = "Rotator cuff strengthening III",
                         Sets = "5",
