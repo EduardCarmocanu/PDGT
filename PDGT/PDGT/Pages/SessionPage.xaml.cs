@@ -37,9 +37,9 @@ namespace PDGT.Pages
 
         
                
-        private void GuideBtn_Clicked(object sender, EventArgs e)
+        private async void GuideBtn_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushModalAsync(new Viewguide());
         }
 
         private void StartSessionButton_Clicked(object sender, EventArgs e)

@@ -1,15 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:PDGT"
-             x:Class="PDGT.MainPage">
-    <StackLayout>
-        <Label Text="Home"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        <Button Text="Start session" Clicked="Button_Clicked"/>
-        <ContentView ControlTemplate="{StaticResource navbar}">
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:PDGT"
+            xmlns:localpage="clr-namespace:PDGT.Pages"
+            x:Class="PDGT.MainPage"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.BarSelectedItemColor="{StaticResource ActiveColor}"
+            android:TabbedPage.IsSwipePagingEnabled="False"
+            NavigationPage.HasNavigationBar="False">
+    <NavigationPage Title="Home" Icon="Home">
+        <x:Arguments>
+            <localpage:SessionPage>
+            
+            </localpage:SessionPage>
+        </x:Arguments>
+    </NavigationPage>
 
-        </ContentView>
-    </StackLayout>
-</ContentPage>
+    <ContentPage Title="Training" Icon="Train">
+
+    </ContentPage>
+
+    <ContentPage Title="Questions" Icon="Question">
+        <StackLayout VerticalOptions="Center">
+            <Label Text="Questions!" HorizontalOptions="CenterAndExpand" />
+            <Label Text="These are not the questions you are looking for" HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage>
+</TabbedPage>
