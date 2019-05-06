@@ -16,5 +16,10 @@ namespace PDGT.Pages
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private async void ExitGuide(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
+        }
+    }
 }
