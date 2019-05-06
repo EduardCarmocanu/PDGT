@@ -2,14 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PDGT.Pages.Viewguide"
-             Title="Exercise guide">
+             Title="Exercise guide"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout>
-            <Image Source="testview" Aspect="AspectFit"/>
+        <Frame Margin="10" HasShadow="True" BackgroundColor="{StaticResource MediumGray}" CornerRadius="10">
+            <StackLayout>
+                <Image Source="testview" Aspect="AspectFit"/>
             <Label Text="Title"
                 HorizontalOptions="CenterAndExpand" />
             <Label Text="Exercise guide" FontAttributes="Bold" HorizontalOptions="Center" />
             <Label Text="Here we insert the exercise guide text which fits the exercise for the day" />
-        </StackLayout>
+            </StackLayout>
+        </Frame>
     </ContentPage.Content>
 </ContentPage>

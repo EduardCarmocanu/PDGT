@@ -6,7 +6,9 @@
             x:Class="PDGT.MainPage"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
-            android:TabbedPage.IsSwipePagingEnabled="False">
+            android:TabbedPage.BarSelectedItemColor="{StaticResource ActiveColor}"
+            android:TabbedPage.IsSwipePagingEnabled="False"
+            NavigationPage.HasNavigationBar="False">
     <NavigationPage Title="Home" Icon="Home">
         <x:Arguments>
             <localpage:SessionPage>
