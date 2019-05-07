@@ -8,6 +8,7 @@ namespace PDGT.Models
     public class SessionModel
     {
         public string SessionTitle { get; set; }
+        public int WeeklyProjectNo { get; set; }
         public string Sets { get; set; }
         public string Reps { get; set; }
         public string WeightInKg { get; set; }
