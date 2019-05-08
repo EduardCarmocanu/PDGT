@@ -5,7 +5,6 @@
              x:Class="PDGT.Pages.SessionPage"
              xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              xmlns:globalization="clr-namespace:System.Globalization;assembly=netstandard"
-             xmlns:local="clr-namespace:PDGT.ViewModels.SessionViewModel"
              BackgroundColor="{StaticResource BackgroundColor}">
 
     <Grid Margin="10"
@@ -41,12 +40,12 @@
                HorizontalOptions="End"
                VerticalOptions="Start"/>
        
-
         <Label Text="Project Week:"
                HorizontalOptions="Center"
                Grid.Row="0"
                Grid.Column="5"
                Grid.ColumnSpan="2"/>
+        
         <Label x:Name="ProjectWeekNo"
                HorizontalOptions="End"
                Grid.Row="0"
@@ -152,8 +151,6 @@
 
         </Grid>
         <cv:CarouselViewControl x:Name="CarouselViews"
-                                
-                                BackgroundColor="HotPink"
                                 Grid.Row="3"
                                 Grid.ColumnSpan="8"
                                 ShowArrows="False"

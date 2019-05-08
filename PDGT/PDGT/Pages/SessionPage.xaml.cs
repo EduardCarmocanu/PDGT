@@ -46,19 +46,13 @@ namespace PDGT.Pages
             //creating "currentDayOfWeek" as an int to be used for calculations
             int currentDayOfWeek = (int)today.DayOfWeek; //sunday=0, monday=1, tuesday=2, etc.
                         
-            DateTime daySunday = today.AddDays(5);
+            DateTime daySunday = today.AddDays(-currentDayOfWeek+7); 
             sunday.Text = daySunday.ToString("dd");
-
-            if (currentDayOfWeek == 0)
-            {
-                DateTime sunday = daySunday.AddDays(0);
-            }
-            
 
             //getting all dates for current week:
             DateTime dayMonday = daySunday.AddDays(-6);
             monday.Text = dayMonday.ToString("dd");
-                       
+
             DateTime dayTuesday = dayMonday.AddDays(1);
             tuesday.Text = dayTuesday.ToString("dd");
 
@@ -73,9 +67,15 @@ namespace PDGT.Pages
 
             DateTime daySaturday = dayMonday.AddDays(5);
             saturday.Text = daySaturday.ToString("dd");
-                       
 
-            //Creating if statements to highlight the current day
+
+            if (currentDayOfWeek == 0)
+            {
+                DateTime monday = dayMonday.AddDays(-7);
+            }
+                        
+
+            //Highlighting the current day
             if (currentDayOfWeek == 0) {
                 sunday.BackgroundColor = Color.Purple;
                 sunday.TextColor = Color.White;

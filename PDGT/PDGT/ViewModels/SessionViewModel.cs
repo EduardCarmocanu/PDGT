@@ -14,10 +14,12 @@ namespace PDGT.ViewModels
     public class SessionViewModel
     {
         public readonly MockService _mockService = new MockService();
-        
+                
         public SessionViewModel()
         {
             _mockService.GetWeekState();
+
+            
                                                 
         }
     }
