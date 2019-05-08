@@ -218,6 +218,7 @@
 
                         <Button x:Name="GuideBtn"
                                 Text="View guide"
+                                Clicked="GuideBtn_Clicked"
                                 Style="{StaticResource GuideButton}"
                                 Grid.Row="5"
                                 Grid.Column="2"
