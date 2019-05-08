@@ -28,11 +28,19 @@ namespace PDGT.Pages
 
             //Initializing the clock and dates on the page
             Device.StartTimer(TimeSpan.FromSeconds(1), Clock);
+                       
+        }
 
+        private async void GuideBtn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new Viewguide());
+        }
 
+        private void StartSessionButton_Clicked(object sender, EventArgs e)
+        {
 
         }
-                       
+
 
         bool Clock()
         {           
