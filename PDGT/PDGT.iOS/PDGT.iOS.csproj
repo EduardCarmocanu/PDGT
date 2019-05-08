@@ -331,4 +331,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\testview.jpg" />
+  </ItemGroup>
 </Project>

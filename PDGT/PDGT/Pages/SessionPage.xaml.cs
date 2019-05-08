@@ -24,10 +24,18 @@ namespace PDGT.Pages
 
             CarouselViews.ItemsSource = _vm._mockService.Exercises;
 
+
             ProjectWeekNo.Text = _vm._mockService.WeekNumber.ToString();
 
             //Initializing the clock and dates on the page
             Device.StartTimer(TimeSpan.FromSeconds(1), Clock);
+
+        
+               
+        private async void GuideBtn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new Viewguide());
+
         }
                        
 
