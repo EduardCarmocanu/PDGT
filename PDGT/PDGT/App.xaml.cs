@@ -13,7 +13,7 @@ namespace PDGT
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new SessionPage());
+			MainPage = new NavigationPage(new MainPage());
 		}
 
         protected override void OnStart()
