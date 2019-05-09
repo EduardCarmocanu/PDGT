@@ -31,5 +31,25 @@ namespace PDGT.Pages
                 PainkillerTakenResult.Text = "No";
             }
         }
+
+        private void Symptombs_Toggled(object sender, ToggledEventArgs e)
+        {
+            if (e.Value == true)
+            {
+                SymptombsResult.Text = "Yes";
+                SymptombsDescription.IsReadOnly = false;
+                SymptombsDescription.BackgroundColor = Color.White;
+                SymptombsDescription.Opacity = 1;
+                SymptombsDescription.PlaceholderColor = Color.Black;
+            }
+            else
+            {
+                SymptombsResult.Text = "No";
+                SymptombsDescription.IsReadOnly = true;
+                SymptombsDescription.BackgroundColor = Color.FromHex("#CCCCCC");
+                SymptombsDescription.Opacity = 0.5;
+            }
+        }
+
     }
 }

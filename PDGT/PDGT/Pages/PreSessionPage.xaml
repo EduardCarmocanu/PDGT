@@ -74,4 +74,30 @@
             </StackLayout>
         </Grid>
     </ContentPage>
+
+    <ContentPage>
+        <Grid BackgroundColor="{StaticResource BackgoundColor}" Padding="0,30,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*" />
+                <RowDefinition Height="0.6*" />
+                <RowDefinition Height="0.2*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*" />
+                <ColumnDefinition Width="0.6*" />
+                <ColumnDefinition Width="0.2*" />
+            </Grid.ColumnDefinitions>
+            <Image Grid.Row="0" Grid.Column="1" Source="NewSymptoms" Aspect="AspectFit"/>
+            <StackLayout Grid.Row="1" Grid.Column="1">
+                <Label Text="Did you develop any new symptombs?" HorizontalOptions="CenterAndExpand" />
+                <Switch Toggled="Symptombs_Toggled" x:Name="SymptombsDeveloped" HorizontalOptions="Center" />
+                <Label x:Name="SymptombsResult" HorizontalOptions="Center" Text="No" />
+                <Editor x:Name="SymptombsDescription" Style="{StaticResource CommentField}" Placeholder="Describe your symptombs" AutoSize="TextChanges" Opacity="0.5" BackgroundColor="#CCCCCC" MaxLength="100"/>
+            </StackLayout>
+            <StackLayout Grid.Row="2" Grid.Column="1" Padding="20,0,20,0">
+                <Button Text="Next" Style="{StaticResource StartButton}" />
+                <Button Text="Go back" Style="{StaticResource SessionButton}"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage>
 </CarouselPage>

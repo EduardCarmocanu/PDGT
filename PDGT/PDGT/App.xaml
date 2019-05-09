@@ -122,6 +122,11 @@
                 <Setter Property="FontFamily" Value="{StaticResource RegularFontFamily}"/>
                 <Setter Property="FontSize" Value="{StaticResource InputTextFontSize}"/>
             </Style>
+            <Style x:Key="CommentField" TargetType="Editor">
+                <Setter Property="PlaceholderColor" Value="{StaticResource PlainWhite}"/>
+                <Setter Property="FontFamily" Value="{StaticResource RegularFontFamily}"/>
+                <Setter Property="FontSize" Value="{StaticResource InputTextFontSize}"/>
+            </Style>
 
         </ResourceDictionary>
     </Application.Resources>
