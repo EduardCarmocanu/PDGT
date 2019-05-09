@@ -199,23 +199,6 @@
                                Grid.Row="2"
                                Grid.Column="1"/>
 
-                        <Label Text="Weight/kg:"
-                               Style="{StaticResource ActiveColorLabel}"
-                               Grid.Row="4"
-                               Grid.Column="0"
-                               HorizontalOptions="Center"/>
-
-                        <Label Text="{Binding .Weight}"
-                               Style="{StaticResource ActiveColorLabel}"
-                               Grid.Row="5"
-                               Grid.Column="0"
-                               HorizontalOptions="Center"/>
-                        
-                        <Image Source="Weight.png"
-                               Grid.Row="5"
-                               Grid.Column="0"
-                               HorizontalOptions="Center"/>
-
                         <Button x:Name="GuideBtn"
                                 Text="View guide"
                                 Clicked="GuideBtn_Clicked"

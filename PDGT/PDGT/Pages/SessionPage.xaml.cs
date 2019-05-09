@@ -30,7 +30,7 @@ namespace PDGT.Pages
             Device.StartTimer(TimeSpan.FromSeconds(1), Clock);
         }
 
-            private async void GuideBtn_Clicked(object sender, EventArgs e)
+         private async void GuideBtn_Clicked(object sender, EventArgs e)
             {
                 await Navigation.PushModalAsync(new Viewguide());
 
@@ -52,13 +52,18 @@ namespace PDGT.Pages
                 //creating "currentDayOfWeek" as an int to be used for calculations
                 int currentDayOfWeek = (int)today.DayOfWeek; //sunday=0, monday=1, tuesday=2, etc.
 
-                DateTime daySunday = today.AddDays(-currentDayOfWeek + 7);
-                sunday.Text = daySunday.ToString("dd");
+                DateTime daySunday = today.AddDays(-currentDayOfWeek +7);
 
+                if ( currentDayOfWeek == 0)
+                {
+                    daySunday = today.AddDays(-currentDayOfWeek);
+                }
+                    sunday.Text = daySunday.ToString("dd");
+                    
                 //getting all dates for current week:
                 DateTime dayMonday = daySunday.AddDays(-6);
                 monday.Text = dayMonday.ToString("dd");
-
+            
                 DateTime dayTuesday = dayMonday.AddDays(1);
                 tuesday.Text = dayTuesday.ToString("dd");
 
@@ -74,12 +79,7 @@ namespace PDGT.Pages
                 DateTime daySaturday = dayMonday.AddDays(5);
                 saturday.Text = daySaturday.ToString("dd");
 
-
-                if (currentDayOfWeek == 0)
-                {
-                    DateTime monday = dayMonday.AddDays(-7);
-                }
-
+            
 
                 //Highlighting the current day
                 if (currentDayOfWeek == 0) {
