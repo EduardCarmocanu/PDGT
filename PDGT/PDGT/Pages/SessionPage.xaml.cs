@@ -36,6 +36,11 @@ namespace PDGT.Pages
 
             }
 
+        private void StartSessionBtn(object sender, EventArgs e)
+        {
+            //start the session
+        }
+
 
             bool Clock()
             {
