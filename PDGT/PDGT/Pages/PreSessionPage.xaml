@@ -1,18 +1,149 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PDGT.Pages.PreSessionPage"
              NavigationPage.HasNavigationBar="False"
              Title="Pre questions">
-    <StackLayout>
-        <Label Text="Icon goes here" HorizontalOptions="Center" />
-        <Label Text="We will start your session with questions. Are you ready?"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        <Button Text="Let'go" />
-        <Button Text="Go back" />
-        <ContentView ControlTemplate="{StaticResource navbar}">
+    <ContentPage>
+        <Grid BackgroundColor="{StaticResource BackgoundColor}" Padding="0,30,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*" />
+                <RowDefinition Height="0.6*" />
+                <RowDefinition Height="0.2*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*" />
+                <ColumnDefinition Width="0.6*" />
+                <ColumnDefinition Width="0.2*" />
+            </Grid.ColumnDefinitions>
+            <Image Grid.Row="0" Grid.Column="1" Source="QuestionActive" />
+            <Label Grid.Row="1" Grid.Column="1" Text="We will start your session with a few questions" HorizontalOptions="CenterAndExpand" />
+            <StackLayout Grid.Row="2" Grid.Column="1" Padding="20,0,20,0">
+                <Button Text="Let's go" Style="{StaticResource StartButton}" />
+                <Button Text="Go back" Style="{StaticResource GuideButton}" />
+            </StackLayout>
+        </Grid>
+    </ContentPage>
+    
+    <ContentPage>
+        <Grid BackgroundColor="{StaticResource BackgoundColor}" Padding="0,30,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*" />
+                <RowDefinition Height="0.6*" />
+                <RowDefinition Height="0.2*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*" />
+                <ColumnDefinition Width="0.6*" />
+                <ColumnDefinition Width="0.2*" />
+            </Grid.ColumnDefinitions>
+            <Image Grid.Row="0" Grid.Column="1" Source="PainLevel" Aspect="AspectFit"/>
+            <StackLayout Grid.Row="1" Grid.Column="1">
+                <Label Text="On a scale from 1 to 10, how much pain are you experiencing right now?" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
+                <StackLayout HorizontalOptions="CenterAndExpand" Padding="0,15,0,0">
+                    <Label Text="0-10" x:Name="painLvl" HorizontalOptions="Center" />
+                    <StackLayout Orientation="Horizontal">
+                        <Button Text="+" />
+                        <Button Text="-" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Grid.Row="2" Grid.Column="1" Padding="20,0,20,0">
+                <Button Text="Next" Style="{StaticResource StartButton}" />
+                <Button Text="Go back" Style="{StaticResource SessionButton}"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage>
 
-        </ContentView>
-    </StackLayout>
-</ContentPage>
+    <ContentPage>
+        <Grid BackgroundColor="{StaticResource BackgoundColor}" Padding="0,30,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*" />
+                <RowDefinition Height="0.6*" />
+                <RowDefinition Height="0.2*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*" />
+                <ColumnDefinition Width="0.6*" />
+                <ColumnDefinition Width="0.2*" />
+            </Grid.ColumnDefinitions>
+            <Image Grid.Row="0" Grid.Column="1" Source="PainKillers" Aspect="AspectFit"/>
+            <StackLayout Grid.Row="1" Grid.Column="1">
+                <Label Text="Have you taken any painkillers before this session?" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
+                <Switch Toggled="TakenPainKillers_Toggled" x:Name="TakenPainKillers" HorizontalOptions="Center" />
+                <Label x:Name="PainkillerTakenResult" HorizontalOptions="Center" Text="No" />
+                <StackLayout Padding="0,10,0,10" x:Name="PainkillerOptions" IsVisible="False">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label Text="1" />
+                        <Label Text="Painkiller" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Button Text="-" />
+                        <Button Text="+" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Entry Style="InputField" Placeholder="Andet?"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Grid.Row="2" Grid.Column="1" Padding="20,0,20,0">
+                <Button Text="Next" Style="{StaticResource StartButton}" />
+                <Button Text="Go back" Style="{StaticResource SessionButton}"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage>
+
+    <ContentPage>
+        <Grid BackgroundColor="{StaticResource BackgoundColor}" Padding="0,30,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*" />
+                <RowDefinition Height="0.6*" />
+                <RowDefinition Height="0.2*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*" />
+                <ColumnDefinition Width="0.6*" />
+                <ColumnDefinition Width="0.2*" />
+            </Grid.ColumnDefinitions>
+            <Image Grid.Row="0" Grid.Column="1" Source="NewSymptoms" Aspect="AspectFit"/>
+            <StackLayout Grid.Row="1" Grid.Column="1">
+                <Label Text="Did you develop any new symptombs?" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
+                <Switch Toggled="Symptombs_Toggled" x:Name="SymptombsDeveloped" HorizontalOptions="Center" />
+                <Label x:Name="SymptombsResult" HorizontalOptions="Center" Text="No" />
+                <Frame CornerRadius="5" HasShadow="False" Padding="0">
+                <Editor x:Name="SymptombsDescription" Style="{StaticResource CommentField}" Placeholder="Describe your symptombs" AutoSize="TextChanges" Opacity="0.5" BackgroundColor="#CCCCCC" MaxLength="100"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout Grid.Row="2" Grid.Column="1" Padding="20,0,20,0">
+                <Button Text="Next" Style="{StaticResource StartButton}" />
+                <Button Text="Go back" Style="{StaticResource SessionButton}"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage>
+
+    <ContentPage>
+        <Grid BackgroundColor="{StaticResource BackgoundColor}" Padding="0,30,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*" />
+                <RowDefinition Height="0.6*" />
+                <RowDefinition Height="0.2*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*" />
+                <ColumnDefinition Width="0.6*" />
+                <ColumnDefinition Width="0.2*" />
+            </Grid.ColumnDefinitions>
+            <Image Grid.Row="0" Grid.Column="1" Source="TrainActive" Aspect="AspectFit"/>
+            <StackLayout Grid.Row="1" Grid.Column="1">
+                <Label Text="Before we start, do you have any comments?" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,0,0,10" />
+                <Frame CornerRadius="5" HasShadow="False" Padding="0">
+                <Editor x:Name="QuestionnaireComment" Placeholder="Your comment" PlaceholderColor="Black" Style="{StaticResource CommentField}" BackgroundColor="White" MaxLength="150"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout Grid.Row="2" Grid.Column="1" Padding="20,0,20,0">
+                <Button Text="Next" Style="{StaticResource StartButton}" />
+                <Button Text="Go back" Style="{StaticResource SessionButton}"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage>
+</CarouselPage>

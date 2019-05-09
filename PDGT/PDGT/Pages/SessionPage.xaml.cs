@@ -69,7 +69,7 @@ namespace PDGT.Pages
 
                 DateTime dayWednesday = dayMonday.AddDays(2);
                 wednesday.Text = dayWednesday.ToString("dd");
-
+                
                 DateTime dayThursday = dayMonday.AddDays(3);
                 thursday.Text = dayThursday.ToString("dd");
 

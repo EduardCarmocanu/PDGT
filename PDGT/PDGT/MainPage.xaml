@@ -9,7 +9,18 @@
                 HorizontalOptions="CenterAndExpand" />
         <Button Text="Start session" Clicked="Button_Clicked"/>
         <ContentView ControlTemplate="{StaticResource navbar}">
+    <NavigationPage Title="Training" Icon="Train">
+        <x:Arguments>
+            <localpage:PreSessionPage>
 
-        </ContentView>
-    </StackLayout>
-</ContentPage>
+            </localpage:PreSessionPage>
+        </x:Arguments>
+    </NavigationPage>
+
+    <ContentPage Title="Questions" Icon="Question">
+        <StackLayout VerticalOptions="Center">
+            <Label Text="Questions!" HorizontalOptions="CenterAndExpand" />
+            <Label Text="These are not the questions you are looking for" HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage>
+</TabbedPage>

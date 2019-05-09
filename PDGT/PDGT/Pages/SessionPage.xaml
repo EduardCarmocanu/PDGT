@@ -214,10 +214,9 @@
         <Button x:Name="StartSessionButton"
                 Text="Start Session"
                 Style="{StaticResource StartButton}"
-                Grid.Row="4"
-                Grid.ColumnSpan="8"                
-                Margin="10"
-                />
+                Grid.Row="3"
+                Grid.ColumnSpan="8"
+                Clicked="StartSessionBtn"/>
     </Grid>
 </ContentPage>
     
