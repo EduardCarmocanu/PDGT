@@ -5,7 +5,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <!-- Colors -->
-            <Color x:Key="BackgoundColor">#F5F5F5</Color>
+            <Color x:Key="BackgroundColor">#F5F5F5</Color>
             <Color x:Key="ActiveColor">#993399</Color>
             <Color x:Key="CtaColor">#52E7B5</Color>
             <Color x:Key="DarkestGrey">#707070</Color>
@@ -114,7 +114,16 @@
                 <Setter Property="FontFamily" Value="{StaticResource RegularFontFamily}"/>
                 <Setter Property="FontSize" Value="{StaticResource InputTextFontSize}"/>
             </Style>
-
+            
+            <!-- Navigation bar-->
+            <ControlTemplate x:Key="navbar">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Button Text="Home"/>
+                    <Button Text="Training" />
+                    <Button Text="Questions" />
+                </StackLayout>
+            </ControlTemplate>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

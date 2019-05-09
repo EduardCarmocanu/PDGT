@@ -9,16 +9,16 @@
             <StackLayout>
                 <Image Source="testview" 
                        Aspect="AspectFit"/>
-                
+
                 <Label Text="Title" 
                        HorizontalOptions="CenterAndExpand" />
-                
+
                 <Label Text="Exercise guide" 
                        FontAttributes="Bold" 
                        HorizontalOptions="Center" />
-                
+
                 <Label Text="Here we insert the exercise guide text which fits the exercise for the day" />
-                
+
                 <Button Text="Go back" 
                         Clicked="ExitGuide" 
                         Style="{StaticResource GuideButton}" />
