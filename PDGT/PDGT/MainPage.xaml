@@ -1,22 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
-            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            xmlns:local="clr-namespace:PDGT"
-            xmlns:localpage="clr-namespace:PDGT.Pages"
-            x:Class="PDGT.MainPage"
-            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
-            android:TabbedPage.ToolbarPlacement="Bottom"
-            android:TabbedPage.BarSelectedItemColor="{StaticResource ActiveColor}"
-            android:TabbedPage.IsSwipePagingEnabled="False"
-            NavigationPage.HasNavigationBar="False">
-    <NavigationPage Title="Home" Icon="Home">
-        <x:Arguments>
-            <localpage:SessionPage>
-            
-            </localpage:SessionPage>
-        </x:Arguments>
-    </NavigationPage>
-
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PDGT"
+             x:Class="PDGT.MainPage">
+    <StackLayout>
+        <Label Text="Home"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        <Button Text="Start session" Clicked="Button_Clicked"/>
+        <ContentView ControlTemplate="{StaticResource navbar}">
     <NavigationPage Title="Training" Icon="Train">
         <x:Arguments>
             <localpage:PreSessionPage>

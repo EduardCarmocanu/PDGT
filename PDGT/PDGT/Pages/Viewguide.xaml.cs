@@ -9,13 +9,13 @@ using Xamarin.Forms.Xaml;
 
 namespace PDGT.Pages
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Viewguide : ContentPage
-	{
-		public Viewguide ()
-		{
-			InitializeComponent ();
-		}
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class Viewguide : ContentPage
+    {
+        public Viewguide()
+        {
+            InitializeComponent();
+        }
 
         private async void ExitGuide(object sender, EventArgs e)
         {

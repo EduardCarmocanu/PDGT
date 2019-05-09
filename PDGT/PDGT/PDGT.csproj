@@ -27,6 +27,9 @@
     <Compile Update="Pages\FatiquePage.xaml.cs">
       <DependentUpon>FatiquePage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Pages\Viewguide.xaml.cs">
+      <DependentUpon>Viewguide.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Pages\PostSessionPage.xaml.cs">
       <DependentUpon>PostSessionPage.xaml</DependentUpon>
     </Compile>
@@ -48,6 +51,9 @@
     <EmbeddedResource Update="Pages\FatiquePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Viewguide.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Pages\PostSessionPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -55,9 +61,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\SessionPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Viewguide.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
