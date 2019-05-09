@@ -15,7 +15,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
     <NuGetPackageImportStamp>
@@ -90,7 +89,7 @@
   <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\PDGT\PDGT.csproj">
-      <Project>{4B2711E2-6DE3-4DA1-A8CD-C10C81ECC649}</Project>
+      <Project>{F9FA0EAC-3315-44A9-A55D-9ECABAB81C67}</Project>
       <Name>PDGT</Name>
     </ProjectReference>
   </ItemGroup>
