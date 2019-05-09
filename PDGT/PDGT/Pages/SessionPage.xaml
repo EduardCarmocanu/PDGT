@@ -119,7 +119,7 @@
                 Style="{StaticResource StartButton}"
                 Grid.Row="3"
                 Grid.ColumnSpan="8"
-                Clicked="StartSessionButton_Clicked"/>
+                Clicked="StartSessionBtn"/>
     </Grid>
 </ContentPage>
     

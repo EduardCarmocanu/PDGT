@@ -11,6 +11,7 @@
             <Color x:Key="DarkestGrey">#707070</Color>
             <Color x:Key="MediumGray">#CCCCCC</Color>
             <Color x:Key="PlainWhite">#FFF</Color>
+            <Color x:Key="NoBg">Transparent</Color>
 
             <!-- Font Families -->
             <OnPlatform x:Key="RegularFontFamily" x:TypeArguments="x:String"
@@ -53,6 +54,13 @@
                 <Setter Property="BorderRadius" Value="40"/>
                 <Setter Property="FontFamily" Value="{StaticResource RegularFontFamily}"/>
                 <Setter Property="TextColor" Value="{StaticResource PlainWhite}"/>
+                <Setter Property="FontSize" Value="{StaticResource SmallButtonFontSize}"/>
+            </Style>
+            <Style x:Key="SessionButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource NoBg}"/>
+                <Setter Property="BorderRadius" Value="40"/>
+                <Setter Property="FontFamily" Value="{StaticResource RegularFontFamily}"/>
+                <Setter Property="TextColor" Value="{StaticResource DarkestGrey}"/>
                 <Setter Property="FontSize" Value="{StaticResource SmallButtonFontSize}"/>
             </Style>
 

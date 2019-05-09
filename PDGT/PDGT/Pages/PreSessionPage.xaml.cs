@@ -6,15 +6,30 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using PDGT.Models;
 
 namespace PDGT.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class PreSessionPage : ContentPage
+	public partial class PreSessionPage : CarouselPage
 	{
 		public PreSessionPage ()
 		{
+            PreQuestionnaire myQ = new PreQuestionnaire();
+
 			InitializeComponent ();
 		}
-	}
+
+        private void TakenPainKillers_Toggled(object sender, ToggledEventArgs e)
+        {
+            if(e.Value == true)
+            {
+                PainkillerTakenResult.Text = "Yes";
+            }
+            else
+            {
+                PainkillerTakenResult.Text = "No";
+            }
+        }
+    }
 }

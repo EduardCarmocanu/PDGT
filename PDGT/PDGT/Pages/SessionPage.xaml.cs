@@ -42,9 +42,9 @@ namespace PDGT.Pages
             await Navigation.PushModalAsync(new Viewguide());
         }
 
-        private void StartSessionButton_Clicked(object sender, EventArgs e)
+        private void StartSessionBtn(object sender, EventArgs e)
         {
-
+            //Code for navigating to the "Training" Tabnav
         }
     }
 }

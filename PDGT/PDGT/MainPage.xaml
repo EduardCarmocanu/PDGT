@@ -17,9 +17,13 @@
         </x:Arguments>
     </NavigationPage>
 
-    <ContentPage Title="Training" Icon="Train">
+    <NavigationPage Title="Training" Icon="Train">
+        <x:Arguments>
+            <localpage:PreSessionPage>
 
-    </ContentPage>
+            </localpage:PreSessionPage>
+        </x:Arguments>
+    </NavigationPage>
 
     <ContentPage Title="Questions" Icon="Question">
         <StackLayout VerticalOptions="Center">
