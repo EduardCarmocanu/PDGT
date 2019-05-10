@@ -168,18 +168,18 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\PDGT\PDGT.csproj">
-      <Project>{4B2711E2-6DE3-4DA1-A8CD-C10C81ECC649}</Project>
+      <Project>{F9FA0EAC-3315-44A9-A55D-9ECABAB81C67}</Project>
       <Name>PDGT</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\weight.png" />
+    <BundleResource Include="Resources\Weight.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\weight%402x.png" />
+    <BundleResource Include="Resources\Weight%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\weight%403x.png" />
+    <BundleResource Include="Resources\Weight%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Home">
@@ -287,47 +287,47 @@
     </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\tired.png">
+    <BundleResource Include="Resources\Tired.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\tired%402x.png">
+    <BundleResource Include="Resources\Tired%402x.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\train-active.png">
+    <BundleResource Include="Resources\Train-active.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\tired%403x.png">
+    <BundleResource Include="Resources\Tired%403x.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\train-active%402x.png">
+    <BundleResource Include="Resources\Train-active%402x.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\train-active%403x.png">
+    <BundleResource Include="Resources\Train-active%403x.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\train.png">
+    <BundleResource Include="Resources\Train.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\train%402x.png">
+    <BundleResource Include="Resources\Train%402x.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\train%403x.png">
+    <BundleResource Include="Resources\Train%403x.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
   </ItemGroup>
