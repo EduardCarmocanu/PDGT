@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PDGT.App">
@@ -42,26 +42,36 @@
 
 
             <!-- Styles Buttons -->
+            <OnPlatform x:Key="LargeBorderRadius" x:TypeArguments="x:Int32" iOS="40" Android="40"/>
+            <OnPlatform x:Key="SmallBorderRadius" x:TypeArguments="x:Int32" iOS="20" Android="40"/>
+            
             <Style x:Key="StartButton" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="{StaticResource CtaColor}"/>
-                <Setter Property="BorderRadius" Value="40"/>
+                <Setter Property="BorderRadius" Value="{StaticResource LargeBorderRadius}"/>
                 <Setter Property="FontFamily" Value="{StaticResource SemiboldFontFamily}"/>
                 <Setter Property="TextColor" Value="{StaticResource PlainWhite}"/>
                 <Setter Property="FontSize" Value="{StaticResource LargeButtonFontSize}"/>
             </Style>
             <Style x:Key="GuideButton" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="{StaticResource DarkestGrey}"/>
-                <Setter Property="BorderRadius" Value="40"/>
+                <Setter Property="BorderRadius" Value="{StaticResource SmallBorderRadius}"/>
                 <Setter Property="FontFamily" Value="{StaticResource RegularFontFamily}"/>
                 <Setter Property="TextColor" Value="{StaticResource PlainWhite}"/>
                 <Setter Property="FontSize" Value="{StaticResource SmallButtonFontSize}"/>
             </Style>
             <Style x:Key="SessionButton" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="{StaticResource NoBg}"/>
-                <Setter Property="BorderRadius" Value="40"/>
+                <Setter Property="BorderRadius" Value="{StaticResource SmallBorderRadius}"/>
                 <Setter Property="FontFamily" Value="{StaticResource RegularFontFamily}"/>
                 <Setter Property="TextColor" Value="{StaticResource DarkestGrey}"/>
                 <Setter Property="FontSize" Value="{StaticResource SmallButtonFontSize}"/>
+            </Style>
+            <Style x:Key="QuestionnaireButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource CtaColor}"/>
+                <Setter Property="BorderRadius" Value="{StaticResource SmallBorderRadius}"/>
+                <Setter Property="FontFamily" Value="{StaticResource SemiboldFontFamily}"/>
+                <Setter Property="TextColor" Value="{StaticResource PlainWhite}"/>
+                <Setter Property="FontSize" Value="{StaticResource LargeButtonFontSize}"/>
             </Style>
 
             <!-- Styles Labels -->
