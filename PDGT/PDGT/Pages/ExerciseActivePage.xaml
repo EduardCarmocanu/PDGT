@@ -70,7 +70,8 @@
                     Text="Finish set"
                     Style="{StaticResource StartButton}"
                     Grid.Row="3"
-                    Padding="10"/>
+                    Padding="10"
+                    Clicked="FinishSetBtn_Clicked"/>
 
             <Button x:Name="SkipExerciseBtn"
                     Text="Skip exercise"

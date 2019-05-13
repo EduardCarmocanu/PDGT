@@ -3,16 +3,69 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PDGT.Pages.FatiquePage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Are you feeling tired?"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Slider />
-            <Button Text="Continue" />
-            <Button Text="Skip Exercise" />
-            <Label Text="Hvor meget vægt brugte du?" />
-            <Label Text="Hvor mange set fuldførte du?" />
-            <Label Text="Hvor mange repetetioner tog du?" />
-        </StackLayout>
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Image Source="Tired"
+                   Grid.Row="0"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="1"
+                   Margin="50"/>
+            <Label Text="Are you feeling tired after this exercise set?"
+                   Style="{StaticResource BodyTextLabel}"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   HorizontalTextAlignment="Center"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand"
+                   />
+            <!-- The Switch section -->
+            <Grid Grid.Row="2"
+                  Grid.ColumnSpan="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+           
+            <Label Text="No"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center"/>
+            <Switch 
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalOptions="Center"/>
+            <Label Text="Yes"
+                   Grid.Row="0"
+                   Grid.Column="2"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"/>
+            </Grid>
+            <Button x:Name="ContinueBtn"
+                    Text="Continue"
+                    Style="{StaticResource StartButton}"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="3"
+                    VerticalOptions="Center"
+                    CornerRadius="40"
+                    Clicked="ContinueBtn_Clicked"/>
+         </Grid>
     </ContentPage.Content>
 </ContentPage>
+    

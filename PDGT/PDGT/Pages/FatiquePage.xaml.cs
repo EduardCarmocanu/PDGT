@@ -16,5 +16,10 @@ namespace PDGT.Pages
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private async void ContinueBtn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new ExerciseActivePage());
+        }
+    }
 }

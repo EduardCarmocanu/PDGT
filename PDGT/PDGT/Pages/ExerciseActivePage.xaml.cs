@@ -22,5 +22,10 @@ namespace PDGT.Pages
             await Navigation.PushModalAsync(new Viewguide());
 
         }
+
+        private async void FinishSetBtn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new FatiquePage());
+        }
     }
 }
