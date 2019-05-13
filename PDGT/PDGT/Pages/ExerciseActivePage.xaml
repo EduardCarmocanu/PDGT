@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PDGT.Pages.ExerciseActivePage"
+             BackgroundColor="{StaticResource BackgroundColor}">
+    <ContentPage.Content>
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <Label x:Name="ExerciseTitle"
+                   Text="Rotator cuff strenghtening"
+                   Style="{StaticResource NameOfExerciseLabel}"
+                   Grid.Row="0"                   
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+            
+            <!-- New grid containing the purple circle -->
+            <Grid Grid.Row="1"
+                  HorizontalOptions="Center"
+                  VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="90"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="90"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                
+                <BoxView x:Name="SetsDone"
+                     BackgroundColor="{StaticResource ActiveColor}"
+                     CornerRadius="45"                    
+                     Grid.Row="1"
+                     Grid.Column="1"/>
+
+                <Label Text="1/5"
+                       Style="{StaticResource SetsCountLabel}"
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"/>
+                <Label Text="Sets done"
+                       Style="{StaticResource SetsCountLabel}"
+                       FontSize="Micro"
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="End"
+                       Margin="10"
+                       />
+            </Grid>
+            
+            <Label x:Name="LatinLetters"
+                   Text="I  II  III  IV  V  VI"
+                   FontSize="{StaticResource LatinLettersFontSize}"
+                   Grid.Row="2"
+                   HorizontalOptions="Center"/>
+
+            <Button x:Name="FinishSetBtn"
+                    Text="Finish set"
+                    Style="{StaticResource StartButton}"
+                    Grid.Row="3"
+                    Padding="10"/>
+
+            <Button x:Name="SkipExerciseBtn"
+                    Text="Skip exercise"
+                    FontSize="{StaticResource BodyTextFontSize}"
+                    TextColor="{StaticResource MediumGray}"
+                    Grid.Row="4"
+                    BackgroundColor="{StaticResource BackgroundColor}"/>
+
+            <Button x:Name="GuideBtn"
+                    Text="View guide"
+                    Clicked="GuideBtn_Clicked"
+                    Style="{StaticResource GuideButton}"
+                    Grid.Row="6"
+                    />
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
