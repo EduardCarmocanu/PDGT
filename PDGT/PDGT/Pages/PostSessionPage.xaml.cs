@@ -22,9 +22,9 @@ namespace PDGT.Pages
             InitializeComponent();
             //Add list of painkillers. Work's in code-behind, but not in XAML Markup ¯\_(ツ)_/¯
             var PainkillerName = new List<Painkiller>();
-            PainkillerName.Add(new Painkiller { Type = "Sum gut weed" });
-            PainkillerName.Add(new Painkiller { Type = "Cocaine" });
-            PainkillerName.Add(new Painkiller { Type = "Eduard Constantine Special" });
+            PainkillerName.Add(new Painkiller { TakenPainkillers = "Sum gut weed" });
+            PainkillerName.Add(new Painkiller { TakenPainkillers = "Cocaine" });
+            PainkillerName.Add(new Painkiller { TakenPainkillers = "Eduard Constantine Special" });
 
             PainkillerList.ItemsSource = PainkillerName;
             PainkillerList.ItemDisplayBinding = new Binding("Type");
