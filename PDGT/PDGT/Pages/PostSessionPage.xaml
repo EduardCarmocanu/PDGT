@@ -4,7 +4,7 @@
              x:Class="PDGT.Pages.PostSessionPage"
              NavigationPage.HasNavigationBar="False">
     
-    <ContentPage Title="PreQuestionStart" TabIndex="0" >
+    <ContentPage Title="PostQuestionStart" TabIndex="0" >
         <Grid BackgroundColor="{StaticResource BackgroundColor}" RowSpacing="50" Padding="0,50,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.2*" />
@@ -25,7 +25,7 @@
         </Grid>
     </ContentPage>
 
-    <ContentPage Title="PreQuestionPain" TabIndex="1">
+    <ContentPage Title="PostQuestionPain" TabIndex="1">
         <Grid BackgroundColor="{StaticResource BackgroundColor}" RowSpacing="50" Padding="0,50,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.2*" />
@@ -51,7 +51,7 @@
         </Grid>
     </ContentPage>
 
-    <ContentPage Title="PreQuestionPainkiller" TabIndex="2" >
+    <ContentPage Title="PostQuestionPainkiller" TabIndex="2" >
         <Grid BackgroundColor="{StaticResource BackgroundColor}" RowSpacing="50" Padding="0,50,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.2*" />
@@ -66,7 +66,7 @@
             <Image Grid.Row="0" Grid.Column="1" Source="PainKillers" Aspect="AspectFit"/>
             <StackLayout Grid.Row="1" Grid.Column="1">
                 <Label Text="Have you taken any painkillers before this session?" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontFamily="{StaticResource RegularFontFamily}" />
-                <Switch Toggled="TakenPainKillers_Toggled" x:Name="TakenPainKillers" HorizontalOptions="Center" OnColor="{StaticResource ActiveColor}" />
+                <Switch Toggled="TakenPainKillers_Toggled" x:Name="TakenPainKillers" HorizontalOptions="Center" />
                 <Label x:Name="PainkillerTakenResult" HorizontalOptions="Center" Text="No" />
                 <StackLayout Padding="0,10,0,10" x:Name="PainkillerOptions" IsVisible="False">
                     <StackLayout Orientation="Horizontal" >
@@ -85,7 +85,7 @@
         </Grid>
     </ContentPage>
 
-    <ContentPage Title="PreQuestionSymptombs" TabIndex="3">
+    <ContentPage Title="PostQuestionSymptombs" TabIndex="3">
         <Grid BackgroundColor="{StaticResource BackgroundColor}" RowSpacing="50" Padding="0,50,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.2*" />
@@ -100,7 +100,7 @@
             <Image Grid.Row="0" Grid.Column="1" Source="NewSymptoms" Aspect="AspectFit"/>
             <StackLayout Grid.Row="1" Grid.Column="1">
                 <Label Text="Did you develop any new symptombs?" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontFamily="{StaticResource RegularFontFamily}" />
-                <Switch Toggled="Symptombs_Toggled" x:Name="SymptombsDeveloped" HorizontalOptions="Center" OnColor="{StaticResource ActiveColor}" />
+                <Switch Toggled="Symptombs_Toggled" x:Name="SymptombsDeveloped" HorizontalOptions="Center" />
                 <Label x:Name="SymptombsResult" HorizontalOptions="Center" Text="No" />
                 <Frame CornerRadius="5" HasShadow="False" Padding="0">
                     <Editor x:Name="SymptombsDescription" Style="{StaticResource CommentField}" Placeholder="Describe your symptombs" AutoSize="TextChanges" Opacity="0.5" BackgroundColor="#CCCCCC" MaxLength="100"/>
@@ -113,7 +113,7 @@
         </Grid>
     </ContentPage>
 
-    <ContentPage Title="PreQuestionComments" TabIndex="4">
+    <ContentPage Title="PostQuestionComments" TabIndex="4">
         <Grid BackgroundColor="{StaticResource BackgroundColor}" RowSpacing="50" Padding="0,50,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.2*" />
