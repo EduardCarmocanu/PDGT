@@ -300,7 +300,7 @@
     </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Train-active.png">
+    <BundleResource Include="Resources\TrainActive.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
   </ItemGroup>
@@ -310,12 +310,12 @@
     </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Train-active%402x.png">
+    <BundleResource Include="Resources\TrainActive%402x.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Train-active%403x.png">
+    <BundleResource Include="Resources\TrainActive%403x.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
   </ItemGroup>
