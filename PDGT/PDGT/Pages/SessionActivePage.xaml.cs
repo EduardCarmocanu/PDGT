@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PDGT.Models;
+using PDGT.Stores;
 using PDGT.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -20,6 +22,12 @@ namespace PDGT.Pages
         public SessionActivePage ()
 		{
 			InitializeComponent ();
+
+            PreQuestionnaire p = new PreQuestionnaire();
+
+            p = QuestionnaireStore.GetPreQuestionnaire();
+
+            Console.WriteLine(p.Comments);
 
             BindingContext = _vm = new SessionViewModel();
 

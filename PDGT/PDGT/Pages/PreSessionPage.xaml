@@ -67,7 +67,7 @@
             <Image Grid.Row="0" Grid.Column="1" Source="PainKillers" Aspect="AspectFit"/>
             <StackLayout Grid.Row="1" Grid.Column="1">
                 <Label Text="Have you taken any painkillers before this session?" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontFamily="{StaticResource RegularFontFamily}" />
-                <Switch Toggled="TakenPainKillers_Toggled" x:Name="TakenPainKillers" HorizontalOptions="Center" />
+                <Switch Toggled="TakenPainKillers_Toggled" x:Name="PainKillersTaken" HorizontalOptions="Center" />
                 <Label x:Name="PainkillerTakenResult" HorizontalOptions="Center" Text="No" />
                 <StackLayout Padding="0,10,0,10" x:Name="PainkillerOptions" IsVisible="False">
                     <StackLayout Orientation="Horizontal" >
@@ -106,7 +106,7 @@
                 <Label x:Name="SymptombsResult" HorizontalOptions="Center" Text="No" />
             </StackLayout>
                 <Frame CornerRadius="5" HasShadow="False" Padding="0">
-                    <Editor x:Name="SymptombsDescription" Style="{StaticResource CommentField}" Placeholder="Describe your symptombs" AutoSize="TextChanges" Opacity="0.5" BackgroundColor="#CCCCCC" MaxLength="100"/>
+                    <Editor x:Name="SymptombsDescription" Style="{StaticResource CommentField}" Placeholder="Describe your symptombs" AutoSize="TextChanges" Opacity="0.5" BackgroundColor="#CCCCCC" MaxLength="100" />
                 </Frame>
             </StackLayout>
             <StackLayout Grid.Row="2" Grid.Column="1" Padding="20,0,20,0">
