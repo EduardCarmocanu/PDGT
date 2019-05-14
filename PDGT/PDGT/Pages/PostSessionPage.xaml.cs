@@ -11,88 +11,88 @@ using PDGT.Models;
 namespace PDGT.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class PostSessionPage : CarouselPage
+	public partial class PostSessionPage : ContentPage
 	{
 		public PostSessionPage ()
 		{
             //Call responsive methods on pages with comments
-            SizeChanged += QuestionnaireCommentPage;
-            SizeChanged += QuestionnaireSymptombsCommentPage;
+            //SizeChanged += QuestionnaireCommentPage;
+            //SizeChanged += QuestionnaireSymptombsCommentPage;
 
             InitializeComponent();
-            //Add list of painkillers. Work's in code-behind, but not in XAML Markup ¯\_(ツ)_/¯
-            var PainkillerName = new List<Painkiller>();
-            PainkillerName.Add(new Painkiller { TakenPainkillers = "Sum gut weed" });
-            PainkillerName.Add(new Painkiller { TakenPainkillers = "Cocaine" });
-            PainkillerName.Add(new Painkiller { TakenPainkillers = "Eduard Constantine Special" });
+            ////Add list of painkillers. Work's in code-behind, but not in XAML Markup ¯\_(ツ)_/¯
+            //var PainkillerName = new List<Painkiller>();
+            //PainkillerName.Add(new Painkiller { TakenPainkillers = "Sum gut weed" });
+            //PainkillerName.Add(new Painkiller { TakenPainkillers = "Cocaine" });
+            //PainkillerName.Add(new Painkiller { TakenPainkillers = "Eduard Constantine Special" });
 
-            PainkillerList.ItemsSource = PainkillerName;
-            PainkillerList.ItemDisplayBinding = new Binding("Type");
+            //PainkillerList.ItemsSource = PainkillerName;
+            //PainkillerList.ItemDisplayBinding = new Binding("Type");
         }
 
-        private void TakenPainKillers_Toggled(object sender, ToggledEventArgs e)
-        {
-            if (e.Value == true)
-            {
-                PainkillerTakenResult.Text = "Yes";
-                PainkillerOptions.IsVisible = true;
-            }
-            else
-            {
-                PainkillerTakenResult.Text = "No";
-                PainkillerOptions.IsVisible = false;
-            }
-        }
+    //    private void TakenPainKillers_Toggled(object sender, ToggledEventArgs e)
+    //    {
+    //        if (e.Value == true)
+    //        {
+    //            PainkillerTakenResult.Text = "Yes";
+    //            PainkillerOptions.IsVisible = true;
+    //        }
+    //        else
+    //        {
+    //            PainkillerTakenResult.Text = "No";
+    //            PainkillerOptions.IsVisible = false;
+    //        }
+    //    }
 
-        //If symptoms is toggled allow comments.
-        private void Symptombs_Toggled(object sender, ToggledEventArgs e)
-        {
-            if (e.Value == true)
-            {
-                SymptombsResult.Text = "Yes";
-                SymptombsDescription.IsReadOnly = false;
-                SymptombsDescription.BackgroundColor = Color.White;
-                SymptombsDescription.Opacity = 1;
-                SymptombsDescription.PlaceholderColor = Color.Black;
-            }
-            else
-            {
-                SymptombsResult.Text = "No";
-                SymptombsDescription.IsReadOnly = true;
-                SymptombsDescription.BackgroundColor = Color.FromHex("#CCCCCC");
-                SymptombsDescription.Opacity = 0.5;
-            }
-        }
+    //    //If symptoms is toggled allow comments.
+    //    private void Symptombs_Toggled(object sender, ToggledEventArgs e)
+    //    {
+    //        if (e.Value == true)
+    //        {
+    //            SymptombsResult.Text = "Yes";
+    //            SymptombsDescription.IsReadOnly = false;
+    //            SymptombsDescription.BackgroundColor = Color.White;
+    //            SymptombsDescription.Opacity = 1;
+    //            SymptombsDescription.PlaceholderColor = Color.Black;
+    //        }
+    //        else
+    //        {
+    //            SymptombsResult.Text = "No";
+    //            SymptombsDescription.IsReadOnly = true;
+    //            SymptombsDescription.BackgroundColor = Color.FromHex("#CCCCCC");
+    //            SymptombsDescription.Opacity = 0.5;
+    //        }
+    //    }
 
-        //Make the Entry on the questionnaire "comment" page responsive according to the screenheight.
-        void QuestionnaireCommentPage(Object sender, EventArgs e)
-        {
-            QuestionnaireComment.HeightRequest = Math.Min(this.Height, 150);
-        }
+    //    //Make the Entry on the questionnaire "comment" page responsive according to the screenheight.
+    //    void QuestionnaireCommentPage(Object sender, EventArgs e)
+    //    {
+    //        QuestionnaireComment.HeightRequest = Math.Min(this.Height, 150);
+    //    }
 
-        //Make the Entry on the questionnaire "symptombs" page responsive according to the screenheight.
-        void QuestionnaireSymptombsCommentPage(Object sender, EventArgs e)
-        {
-            SymptombsDescription.HeightRequest = Math.Min(this.Height, 150);
-        }
+    //    //Make the Entry on the questionnaire "symptombs" page responsive according to the screenheight.
+    //    void QuestionnaireSymptombsCommentPage(Object sender, EventArgs e)
+    //    {
+    //        SymptombsDescription.HeightRequest = Math.Min(this.Height, 150);
+    //    }
 
 
 
-        private void CarouselForward(object sender, EventArgs e)
-        {
-            int carouselIndex = Children.IndexOf(CurrentPage);
-            this.CurrentPage = this.Children[carouselIndex + 1];
-        }
+    //    private void CarouselForward(object sender, EventArgs e)
+    //    {
+    //        int carouselIndex = Children.IndexOf(CurrentPage);
+    //        this.CurrentPage = this.Children[carouselIndex + 1];
+    //    }
 
-        private void CarouselBackward(object sender, EventArgs e)
-        {
-            int carouselIndex = Children.IndexOf(CurrentPage);
-            this.CurrentPage = this.Children[carouselIndex - 1];
-        }
+    //    private void CarouselBackward(object sender, EventArgs e)
+    //    {
+    //        int carouselIndex = Children.IndexOf(CurrentPage);
+    //        this.CurrentPage = this.Children[carouselIndex - 1];
+    //    }
 
-        private async void StartExerciseSession(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new SessionActivePage());
-        }
+    //    private async void StartExerciseSession(object sender, EventArgs e)
+    //    {
+    //        await Navigation.PushAsync(new SessionActivePage());
+    //    }
     }
 }

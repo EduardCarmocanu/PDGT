@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using PDGT.Stores;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using PDGT.Models;
@@ -105,7 +105,9 @@ namespace PDGT.Pages
 
         private async void StartExerciseSession(object sender, EventArgs e)
         {
+            QuestionnaireStore.SetPreQuestionnaireAsync(PreQuestions);
             await Navigation.PushAsync(new SessionActivePage());
+            
         }
     }
 }
