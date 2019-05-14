@@ -17,7 +17,7 @@
                 <ColumnDefinition Width="0.2*" />
             </Grid.ColumnDefinitions>
             <Image Grid.Row="0" Grid.Column="1" Source="QuestionActive" />
-            <Label Grid.Row="1" Grid.Column="1"  HorizontalTextAlignment="Center" Text="We will start your session with a few questions" HorizontalOptions="CenterAndExpand" FontFamily="{StaticResource RegularFontFamily}" />
+            <Label Grid.Row="1" Grid.Column="1"  HorizontalTextAlignment="Center" Text="Before finishing this sessions we just need to know a bit more" HorizontalOptions="CenterAndExpand" FontFamily="{StaticResource RegularFontFamily}" />
             <StackLayout Grid.Row="2" Grid.Column="1" Padding="20,0,20,0">
                 <Button Text="Let's go" Style="{StaticResource QuestionnaireButton}" Clicked="CarouselForward" />
                 
@@ -65,7 +65,7 @@
             </Grid.ColumnDefinitions>
             <Image Grid.Row="0" Grid.Column="1" Source="PainKillers" Aspect="AspectFit"/>
             <StackLayout Grid.Row="1" Grid.Column="1">
-                <Label Text="Have you taken any painkillers before this session?" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontFamily="{StaticResource RegularFontFamily}" />
+                <Label Text="Have you taken any painkillers after this session?" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontFamily="{StaticResource RegularFontFamily}" />
                 <Switch Toggled="TakenPainKillers_Toggled" x:Name="TakenPainKillers" HorizontalOptions="Center" />
                 <Label x:Name="PainkillerTakenResult" HorizontalOptions="Center" Text="No" />
                 <StackLayout Padding="0,10,0,10" x:Name="PainkillerOptions" IsVisible="False">
@@ -129,13 +129,13 @@
             </Grid.ColumnDefinitions>
             <Image Grid.Row="0" Grid.Column="1" Source="TrainActive" Aspect="AspectFit"/>
             <StackLayout Grid.Row="1" Grid.Column="1">
-                <Label Text="Before we start, do you have any comments?" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,0,0,10" FontFamily="{StaticResource RegularFontFamily}" />
+                <Label Text="Any comments before we finish the session?" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,0,0,10" FontFamily="{StaticResource RegularFontFamily}" />
                 <Frame CornerRadius="5" HasShadow="False" Padding="0">
                     <Editor x:Name="QuestionnaireComment" Placeholder="Your comment" PlaceholderColor="Black" Style="{StaticResource CommentField}" BackgroundColor="White" MaxLength="150"/>
                 </Frame>
             </StackLayout>
             <StackLayout Grid.Row="2" Grid.Column="1" Padding="20,0,20,0">
-                <Button Text="Let's Start" Style="{StaticResource QuestionnaireButton}" Clicked="StartExerciseSession" />
+                <Button Text="Finish" Style="{StaticResource QuestionnaireButton}" Clicked="StartExerciseSession" />
                 <Button Text="Go back" Style="{StaticResource SessionButton}" Clicked="CarouselBackward" />
             </StackLayout>
         </Grid>
