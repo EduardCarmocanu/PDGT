@@ -125,6 +125,11 @@
                 <Setter Property="TextColor" Value="{StaticResource ActiveColor}"/>
                 <Setter Property="FontSize" Value="{StaticResource BodyTextFontSize}"/>
             </Style>
+            <Style x:Key="SetsCountLabel" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource BoldFontFamily}"/>
+                <Setter Property="TextColor" Value="{StaticResource PlainWhite}"/>
+                <Setter Property="FontSize" Value="{StaticResource MediumHeadingFontSize}"/>
+            </Style>
 
             <!-- Input fields -->
             <Style x:Key="InputField" TargetType="Entry">
