@@ -106,6 +106,7 @@
                                 Style="{StaticResource StartButton}"
                                 Grid.Row="5"
                                 Grid.Column="2"
+                                Clicked="StartExerciseBtn_Clicked"
                                 />
                     </Grid>
                 </DataTemplate>

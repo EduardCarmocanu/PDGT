@@ -14,7 +14,7 @@ namespace PDGT.Pages
 	{
         SessionViewModel _vm;
         int sessionCount;
-        bool sessionsDone;
+        
 
 
         public SessionActivePage ()
@@ -31,12 +31,13 @@ namespace PDGT.Pages
             exerciseCount.Text = sessionCount.ToString();
 
            
-            bool sessionsDone = _vm._mockService.SessionsFinished;
-            if (sessionsDone == false)
-            {
-                exerciseDone.Text = "0";
-            }
+            
             
 		}
-	}
+
+        private async void StartExerciseBtn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ExerciseActivePage());
+        }
+    }
 }
