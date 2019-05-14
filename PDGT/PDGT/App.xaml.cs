@@ -22,14 +22,13 @@ namespace PDGT
 
         protected override void OnStart()
         {
+
             User LoggedInUser = TokenStore.GetUserToken();
 
             if (LoggedInUser.Token == null)
             {
                 MainPage = new NavigationPage(new LoginPage());
             }
-
-            Console.WriteLine(LoggedInUser.Token);
         }
 
 		protected override void OnSleep()
