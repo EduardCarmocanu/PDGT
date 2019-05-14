@@ -17,9 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Pages\ExercisePage.xaml.cs">
-      <DependentUpon>ExercisePage.xaml</DependentUpon>
-    </Compile>
+    <Compile Remove="Pages\ExercisePage.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Update="Pages\FatiquePage.xaml.cs">
       <DependentUpon>FatiquePage.xaml</DependentUpon>
     </Compile>
@@ -41,9 +41,6 @@
     <EmbeddedResource Update="Pages\ExerciseActivePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\ExercisePage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Pages\FaqPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -62,5 +59,8 @@
     <EmbeddedResource Update="Pages\SessionPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\Authentication\" />
   </ItemGroup>
 </Project>
