@@ -52,7 +52,7 @@ namespace PDGT.Pages
                 DateTime today = DateTime.Today;
 
                 //getting current month
-                CurrentMonth.Text = today.ToString("MMMM", CultureInfo.InvariantCulture).ToUpper() + ":";
+                CurrentMonth.Text = today.ToString("MMMM", CultureInfo.InvariantCulture).ToUpper();
 
                 //creating "currentDayOfWeek" as an int to be used for calculations
                 int currentDayOfWeek = (int)today.DayOfWeek; //sunday=0, monday=1, tuesday=2, etc.

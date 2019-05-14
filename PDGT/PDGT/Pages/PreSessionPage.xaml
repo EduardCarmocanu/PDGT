@@ -42,7 +42,7 @@
             <StackLayout Grid.Row="1" Grid.Column="1">
                 <Label Text="On a scale from 1 to 10, how much pain are you experiencing right now?" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontFamily="{StaticResource RegularFontFamily}" />
                 <StackLayout HorizontalOptions="CenterAndExpand" Padding="0,15,0,0">
-                    <Label Text="0"  x:Name="painLvl" HorizontalOptions="Center" />
+                    <Label Text="0"  x:Name="painLvl" Style="{StaticResource ActiveColorLabel}" HorizontalOptions="Center" />
                     <Stepper BindingContext="{x:Reference painLvl}" Value="{Binding Text, StringFormat='Pain: {0:F0}'}" HorizontalOptions="Center" Maximum="10" Minimum="1" Increment="1" />
                 </StackLayout>
             </StackLayout>
@@ -75,7 +75,7 @@
                         <Picker x:Name="PainkillerList" Title="Select Painkiller" VerticalOptions="Center" FontSize="{StaticResource InputTextFontSize}" FontFamily="{StaticResource RegularFontFamily}" />
                     </StackLayout>
                     <StackLayout>
-                        <Entry FontSize="{StaticResource InputTextFontSize}" Placeholder="Andet?" />
+                        <Entry FontSize="{StaticResource InputTextFontSize}" Placeholder="Other?" />
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
@@ -100,9 +100,11 @@
             </Grid.ColumnDefinitions>
             <Image Grid.Row="0" Grid.Column="1" Source="NewSymptoms" Aspect="AspectFit"/>
             <StackLayout Grid.Row="1" Grid.Column="1">
-                <Label Text="Did you develop any new symptombs?" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontFamily="{StaticResource RegularFontFamily}" />
-                <Switch Toggled="Symptombs_Toggled" x:Name="SymptombsDeveloped" HorizontalOptions="Center" />
+                <Label Text="Did you develop any new symptoms?"  HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontFamily="{StaticResource RegularFontFamily}" />
+            <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalOptions="Center">
+                <Switch Toggled="Symptombs_Toggled" Grid.Row="2" x:Name="SymptombsDeveloped" HorizontalOptions="Center" />
                 <Label x:Name="SymptombsResult" HorizontalOptions="Center" Text="No" />
+            </StackLayout>
                 <Frame CornerRadius="5" HasShadow="False" Padding="0">
                     <Editor x:Name="SymptombsDescription" Style="{StaticResource CommentField}" Placeholder="Describe your symptombs" AutoSize="TextChanges" Opacity="0.5" BackgroundColor="#CCCCCC" MaxLength="100" />
                 </Frame>
