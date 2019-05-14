@@ -11,9 +11,9 @@ using Xamarin.Forms.Xaml;
 namespace PDGT.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ExercisePage : ContentPage
+	public partial class ExerciseActivePage : ContentPage
 	{
-		public ExercisePage ()
+		public ExerciseActivePage ()
 		{
 			InitializeComponent ();
 		}
