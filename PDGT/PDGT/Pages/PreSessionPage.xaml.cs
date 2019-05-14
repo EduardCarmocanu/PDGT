@@ -13,16 +13,22 @@ namespace PDGT.Pages
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class PreSessionPage : CarouselPage
 	{
-		public PreSessionPage ()
+        public PreSessionPage ()
 		{
-            PreQuestionnaire myQ = new PreQuestionnaire();
             //Call responsive methods on pages with comments
             SizeChanged += QuestionnaireCommentPage;
             SizeChanged += QuestionnaireSymptombsCommentPage;
 
-
             InitializeComponent ();
-		}
+            //Add list of painkillers. Work's in code-behind, but not in XAML Markup ¯\_(ツ)_/¯
+            var PainkillerName = new List<Painkiller>();
+            PainkillerName.Add(new Painkiller { Type = "Sum gut weed" });
+            PainkillerName.Add(new Painkiller { Type = "Cocaine" });
+            PainkillerName.Add(new Painkiller { Type = "Eduard Constantine Special" });
+
+            PainkillerList.ItemsSource = PainkillerName;
+            PainkillerList.ItemDisplayBinding = new Binding("Type");
+        }
 
         private void TakenPainKillers_Toggled(object sender, ToggledEventArgs e)
         {
@@ -38,6 +44,7 @@ namespace PDGT.Pages
             }
         }
 
+        //If symptombs is toggled allow comments.
         private void Symptombs_Toggled(object sender, ToggledEventArgs e)
         {
             if (e.Value == true)
@@ -60,14 +67,32 @@ namespace PDGT.Pages
         //Make the Entry on the questionnaire "comment" page responsive according to the screenheight.
         void QuestionnaireCommentPage(Object sender, EventArgs e)
         {
-            QuestionnaireComment.HeightRequest = Math.Min(this.Height, 275);
+            QuestionnaireComment.HeightRequest = Math.Min(this.Height, 150);
         }
 
         //Make the Entry on the questionnaire "symptombs" page responsive according to the screenheight.
         void QuestionnaireSymptombsCommentPage(Object sender, EventArgs e)
         {
-            SymptombsDescription.HeightRequest = Math.Min(this.Height, 275);
+            SymptombsDescription.HeightRequest = Math.Min(this.Height, 150);
         }
 
+
+
+        private void CarouselForward(object sender, EventArgs e)
+        {
+            int carouselIndex = Children.IndexOf(CurrentPage);
+            this.CurrentPage = this.Children[carouselIndex + 1];
+        }
+
+        private void CarouselBackward(object sender, EventArgs e)
+        {
+            int carouselIndex = Children.IndexOf(CurrentPage);
+            this.CurrentPage = this.Children[carouselIndex - 1];
+        }
+
+        private async void StartExerciseSession(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ExerciseActivePage());
+        }
     }
 }

@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             x:Class="PDGT.Pages.SessionActivePage">
+    <Grid Margin="10"
+          >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="SessionTitle"
+               Style="{StaticResource SessionLabel}"
+               Grid.Row="0"
+               Grid.RowSpan="2"
+               Grid.Column="0"
+               Grid.ColumnSpan="5"/>
+        <Label x:Name="exerciseDone"
+               Style="{StaticResource ExerciseDoneLabel}"
+               Grid.Row="2"
+               Grid.Column="0"
+               VerticalOptions="Start"/>
+        <Label Text="/"
+               Style="{StaticResource ExerciseDoneLabel}"
+               Grid.Row="2"
+               Grid.Column="1"/>
+        <Label x:Name="exerciseCount"
+               Style="{StaticResource ExerciseDoneLabel}"
+               Grid.Row="2"
+               Grid.Column="2"
+               VerticalOptions="Start"/>
+        <Label Text="exercises done"
+               Style="{StaticResource BodyTextLabel}"
+               Grid.Row="2"
+               Grid.Column="0"
+               Grid.ColumnSpan="3"
+               VerticalTextAlignment="End"/>
+
+
+        <cv:CarouselViewControl x:Name="CarouselViews"
+                                Grid.Row="3"
+                                Grid.ColumnSpan="8"
+                                ShowArrows="False"
+                                ShowIndicators="True"
+                                Orientation="Horizontal"
+                                Margin="5">
+            <cv:CarouselViewControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="20"
+                          BackgroundColor="{StaticResource MediumGray}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*" />
+                            <RowDefinition Height="1.5*" />
+                            <RowDefinition Height="1.5*" />
+                            <RowDefinition Height="3*" />
+                            <RowDefinition Height="2*" />
+                            <RowDefinition Height="3*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="{Binding .Name}"
+                               Style="{StaticResource NameOfExerciseLabel}"
+                               Grid.Row="0"
+                               Grid.ColumnSpan="3"/>
+
+                        <Label Text="Sets: "
+                               Grid.Row="1"
+                               Grid.Column="0"/>
+
+                        <Label Text="{Binding .Sets}"
+                               Style="{StaticResource ActiveColorLabel}"
+                               Grid.Row="1"
+                               Grid.Column="1"/>
+
+                        <Label Text="Reps/set: "
+                               Grid.Row="2"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"/>
+
+                        <Label Text="{ Binding .Repetitions}"
+                               Style="{StaticResource ActiveColorLabel}"
+                               Grid.Row="2"
+                               Grid.Column="1"/>
+
+                        <Button x:Name="StartExerciseBtn"
+                                Text="Start"
+                                FontSize="14"
+                                Style="{StaticResource StartButton}"
+                                Grid.Row="5"
+                                Grid.Column="2"
+                                />
+                    </Grid>
+                </DataTemplate>
+            </cv:CarouselViewControl.ItemTemplate>
+        </cv:CarouselViewControl>
+       
+    </Grid>
+</ContentPage>
