@@ -92,7 +92,7 @@ namespace PDGT.Pages
 
         private async void StartExerciseSession(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ExerciseActivePage());
+            await Navigation.PushAsync(new SessionActivePage());
         }
     }
 }
