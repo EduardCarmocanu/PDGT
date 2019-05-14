@@ -22,6 +22,10 @@ namespace PDGT.Pages
             InitializeComponent ();
             //Add list of painkillers. Work's in code-behind, but not in XAML Markup ¯\_(ツ)_/¯
             var PainkillerName = new List<Painkiller>();
+            //foreach( Painkiller drug in PainkillerName)
+            //{
+            //    PainkillerName.Add(new Painkiller { Type = drug });
+            //}
             PainkillerName.Add(new Painkiller { Type = "Sum gut weed" });
             PainkillerName.Add(new Painkiller { Type = "Cocaine" });
             PainkillerName.Add(new Painkiller { Type = "Eduard Constantine Special" });
