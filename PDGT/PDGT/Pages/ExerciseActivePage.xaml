@@ -42,7 +42,6 @@
                      CornerRadius="45"                    
                      Grid.Row="1"
                      Grid.Column="1"/>
-
                 <Label Text="1/5"
                        Style="{StaticResource SetsCountLabel}"
                        Grid.Row="1"
