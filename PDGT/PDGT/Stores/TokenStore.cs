@@ -5,6 +5,7 @@ using PDGT.Models;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using PDGT.Services;
+using PDGT.Models.Authentication;
 
 namespace PDGT.Stores
 {
@@ -20,7 +21,12 @@ namespace PDGT.Stores
             }
             catch (KeyNotFoundException)
             {
-                AuthenticationService.SetUserToken("1234");
+                //UserLogin newLogin = new UserLogin();
+                //newLogin.Email = "patient@email.com";
+                //newLogin.Password = "Password123!";
+
+                //AuthenticationService.AuthenticateUser(newLogin);
+                //Console.WriteLine("Logged in - or something, try to see");
             }
             return CurrentUser;
         }
