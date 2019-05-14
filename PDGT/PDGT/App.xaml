@@ -35,9 +35,9 @@
             <x:Double x:Key="QuestionsFontSize">22</x:Double>
             <x:Double x:Key="DatesFontSize">24</x:Double>
             <x:Double x:Key="LatinLettersFontSize">30</x:Double>
-            <x:Double x:Key="MediumHeadingFontSize">40</x:Double>
-            <x:Double x:Key="LargeHeadingFontSize">60</x:Double>
-            <x:Double x:Key="XLargeHeadingFontSize">80</x:Double>
+            <x:Double x:Key="MediumHeadingFontSize">35</x:Double>
+            <x:Double x:Key="LargeHeadingFontSize">50</x:Double>
+            <x:Double x:Key="XLargeHeadingFontSize">70</x:Double>
            
 
 
