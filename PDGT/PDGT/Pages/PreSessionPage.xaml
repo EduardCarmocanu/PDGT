@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PDGT.Pages.PreSessionPage"
@@ -20,7 +20,7 @@
             <Image Grid.Row="0" Grid.Column="1" Source="QuestionActive" />
             <Label Grid.Row="1" Grid.Column="1" Text="We will start your session with a few questions" HorizontalOptions="CenterAndExpand" FontFamily="{StaticResource RegularFontFamily}" />
             <StackLayout Grid.Row="2" Grid.Column="1" Padding="20,0,20,0">
-                <Button Text="Let's go" Style="{StaticResource StartButton}" Clicked="CarouselForward" />
+                <Button Text="Let's go" Style="{StaticResource QuestionnaireButton}" Clicked="CarouselForward" />
                 <Button x:Name="indexEndHere" Text="Go back" Style="{StaticResource GuideButton}" Clicked="CarouselBackward" IsEnabled="False" />
             </StackLayout>
         </Grid>
@@ -47,7 +47,7 @@
                 </StackLayout>
             </StackLayout>
             <StackLayout Grid.Row="2" Grid.Column="1" Padding="20,0,20,0">
-                <Button Text="Next" Style="{StaticResource StartButton}" Clicked="CarouselForward"/>
+                <Button Text="Next" Style="{StaticResource QuestionnaireButton}" Clicked="CarouselForward"/>
                 <Button Text="Go back" Style="{StaticResource SessionButton}" Clicked="CarouselBackward" />
             </StackLayout>
         </Grid>
@@ -81,7 +81,7 @@
                 </StackLayout>
             </StackLayout>
             <StackLayout Grid.Row="2" Grid.Column="1" Padding="20,0,20,0">
-                <Button Text="Next" Style="{StaticResource StartButton}" Clicked="CarouselForward"/>
+                <Button Text="Next" Style="{StaticResource QuestionnaireButton}" Clicked="CarouselForward"/>
                 <Button Text="Go back" Style="{StaticResource SessionButton}" Clicked="CarouselBackward" />
             </StackLayout>
         </Grid>
@@ -109,7 +109,7 @@
                 </Frame>
             </StackLayout>
             <StackLayout Grid.Row="2" Grid.Column="1" Padding="20,0,20,0">
-                <Button Text="Next" Style="{StaticResource StartButton}" Clicked="CarouselForward" />
+                <Button Text="Next" Style="{StaticResource QuestionnaireButton}" Clicked="CarouselForward" />
                 <Button Text="Go back" Style="{StaticResource SessionButton}" Clicked="CarouselBackward" />
             </StackLayout>
         </Grid>
@@ -135,7 +135,7 @@
                 </Frame>
             </StackLayout>
             <StackLayout Grid.Row="2" Grid.Column="1" Padding="20,0,20,0">
-                <Button Text="Let's Start" Style="{StaticResource StartButton}" Clicked="StartExerciseSession" />
+                <Button Text="Let's Start" Style="{StaticResource QuestionnaireButton}" Clicked="StartExerciseSession" />
                 <Button Text="Go back" Style="{StaticResource SessionButton}" Clicked="CarouselBackward" />
             </StackLayout>
         </Grid>
