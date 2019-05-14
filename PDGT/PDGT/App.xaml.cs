@@ -17,11 +17,11 @@ namespace PDGT
         {
             InitializeComponent();
             MainPage = new NavigationPage(new MainPage());
-
 		}
 
         protected override void OnStart()
         {
+            Akavache.Registrations.Start("PDGT");
 
             User LoggedInUser = TokenStore.GetUserToken();
 
@@ -33,8 +33,7 @@ namespace PDGT
 
 		protected override void OnSleep()
 		{
-			// Handle when your app sleeps
-		}
+        }
 
 		protected override void OnResume()
 		{
