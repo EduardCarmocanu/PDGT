@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using PDGT.Stores;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using PDGT.Models;
@@ -13,6 +13,9 @@ namespace PDGT.Pages
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class PreSessionPage : CarouselPage
 	{
+        //Instantiate the PreQuestionnaire model to be used
+        PreQuestionnaire PreQuestions = new PreQuestionnaire();
+
         public PreSessionPage ()
 		{
             //Call responsive methods on pages with comments
@@ -22,12 +25,15 @@ namespace PDGT.Pages
             InitializeComponent ();
             //Add list of painkillers. Work's in code-behind, but not in XAML Markup ¯\_(ツ)_/¯
             var PainkillerName = new List<Painkiller>();
-            PainkillerName.Add(new Painkiller { Type = "Sum gut weed" });
-            PainkillerName.Add(new Painkiller { Type = "Cocaine" });
-            PainkillerName.Add(new Painkiller { Type = "Eduard Constantine Special" });
+            PainkillerName.Add(new Painkiller { TakenPainkillers = "Panodil" });
+            PainkillerName.Add(new Painkiller { TakenPainkillers = "Ipren" });
+            PainkillerName.Add(new Painkiller { TakenPainkillers = "Pamol" });
 
             PainkillerList.ItemsSource = PainkillerName;
             PainkillerList.ItemDisplayBinding = new Binding("Type");
+
+            //Bind comment to PreQuestionnaire model
+            QuestionnaireComment.Text = PreQuestions.Comments;
         }
 
         private void TakenPainKillers_Toggled(object sender, ToggledEventArgs e)
@@ -36,15 +42,19 @@ namespace PDGT.Pages
             {
                 PainkillerTakenResult.Text = "Yes";
                 PainkillerOptions.IsVisible = true;
+                //Prequestionnaire  Painkiller model
+                PreQuestions.TakenPainkillers = true;
             }
             else
             {
                 PainkillerTakenResult.Text = "No";
                 PainkillerOptions.IsVisible = false;
+                //Prequestionnaire  Painkiller model
+                PreQuestions.TakenPainkillers = false;
             }
         }
 
-        //If symptombs is toggled allow comments.
+        //If symptoms is toggled allow comments.
         private void Symptombs_Toggled(object sender, ToggledEventArgs e)
         {
             if (e.Value == true)
@@ -54,6 +64,9 @@ namespace PDGT.Pages
                 SymptombsDescription.BackgroundColor = Color.White;
                 SymptombsDescription.Opacity = 1;
                 SymptombsDescription.PlaceholderColor = Color.Black;
+                //Prequestionnaire model
+                PreQuestions.TrainingSideEffects = true;
+                PreQuestions.TrainingSideEffectsDescription = SymptombsDescription.Text;
             }
             else
             {
@@ -61,6 +74,8 @@ namespace PDGT.Pages
                 SymptombsDescription.IsReadOnly = true;
                 SymptombsDescription.BackgroundColor = Color.FromHex("#CCCCCC");
                 SymptombsDescription.Opacity = 0.5;
+                //Prequestionnaire model
+                PreQuestions.TrainingSideEffects = false;
             }
         }
 
@@ -76,8 +91,6 @@ namespace PDGT.Pages
             SymptombsDescription.HeightRequest = Math.Min(this.Height, 150);
         }
 
-
-
         private void CarouselForward(object sender, EventArgs e)
         {
             int carouselIndex = Children.IndexOf(CurrentPage);
@@ -92,7 +105,9 @@ namespace PDGT.Pages
 
         private async void StartExerciseSession(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ExerciseActivePage());
+            QuestionnaireStore.SetPreQuestionnaire(PreQuestions);
+            await Navigation.PushAsync(new SessionActivePage());
+            
         }
     }
 }

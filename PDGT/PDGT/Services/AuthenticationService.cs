@@ -11,14 +11,14 @@ namespace PDGT.Services
 {
     public class AuthenticationService
     {
-        public static async void SetUserTokenAsync(string token)
+        public static void SetUserToken(string token)
         {
             var user = new User { Token = token };
 
-            await BlobCache.Secure.InsertObject<User>(
+            BlobCache.Secure.InsertObject<User>(
                 "CurrentUser", 
                 user, 
-                DateTimeOffset.Now.AddHours(168));
+                DateTimeOffset.Now.AddHours(168)).Wait();
         }
 
         public static bool AuthenticateUser (UserLogin login)
@@ -34,7 +34,7 @@ namespace PDGT.Services
 
             if(response.IsSuccessful)
             {
-                SetUserTokenAsync(response.Content);
+                SetUserToken(response.Content);
                 return true;
             }
             else

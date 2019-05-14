@@ -9,7 +9,7 @@ namespace PDGT.Models
     {
         [Required]
         [StringLength(64, ErrorMessage = "Painkiller name too long", MinimumLength = 2)]
-        public string Type { get; set; }
+        public string TakenPainkillers { get; set; }
         [Required]
         public int Amount { get; set; }
     }
