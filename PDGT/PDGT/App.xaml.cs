@@ -1,35 +1,36 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using PDGT.Stores;
+using PDGT.Models;
 
 using PDGT.Pages;
+using Akavache;
+using System.Threading.Tasks;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace PDGT
 {
 	public partial class App : Application
 	{
-        public static bool IsUserLoggedIn { get; set; }
         public App()
-		{
-            IsUserLoggedIn = false;
+        {
             InitializeComponent();
+            MainPage = new NavigationPage(new MainPage());
 
-            if (!IsUserLoggedIn)
-            {
-                MainPage = new NavigationPage(new LoginPage());
-            }
-            else
-            {
-
-                MainPage = new NavigationPage(new MainPage());
-            }
 		}
 
         protected override void OnStart()
-		{
-			// Handle when your app starts
-		}
+        {
+            User LoggedInUser = TokenStore.GetUserToken();
+
+            if (LoggedInUser.Token == null)
+            {
+                MainPage = new NavigationPage(new LoginPage());
+            }
+
+            Console.WriteLine(LoggedInUser.Token);
+        }
 
 		protected override void OnSleep()
 		{

@@ -3,8 +3,6 @@ namespace PDGT.Models
 {
     public class User
     {
-        public User()
-        {
-        }
+        public string Token { get; set; }
     }
 }
