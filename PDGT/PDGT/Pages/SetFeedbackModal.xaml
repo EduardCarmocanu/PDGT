@@ -43,7 +43,7 @@
                    Grid.ColumnSpan="3"
                    HorizontalTextAlignment="Center"
                    />
-            <Entry x:Name="RepsEntry" 
+            <Entry x:Name="RepsEntry"                   
                    Grid.Row="4"
                    Grid.ColumnSpan="3"
                    HorizontalTextAlignment="Center"
