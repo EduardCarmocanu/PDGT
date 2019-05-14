@@ -41,7 +41,7 @@ namespace PDGT.Pages
 
         private async void FinishSetBtn_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new SetFeedbackModal());
+            await Navigation.PushModalAsync(new FatiquePage());
         }
     }
 }
