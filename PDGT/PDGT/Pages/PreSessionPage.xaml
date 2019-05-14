@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PDGT.Pages.PreSessionPage"
              NavigationPage.HasNavigationBar="False"
-             Title="Pre questions">
-    <ContentPage>
+             Title="Pre questions"
+              >
+    <ContentPage Title="PreQuestionStart" TabIndex="0" >
         <Grid BackgroundColor="{StaticResource BackgroundColor}" Padding="0,30,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.2*" />
@@ -17,15 +18,15 @@
                 <ColumnDefinition Width="0.2*" />
             </Grid.ColumnDefinitions>
             <Image Grid.Row="0" Grid.Column="1" Source="QuestionActive" />
-            <Label Grid.Row="1" Grid.Column="1" Text="We will start your session with a few questions" HorizontalOptions="CenterAndExpand" />
+            <Label Grid.Row="1" Grid.Column="1" Text="We will start your session with a few questions" HorizontalOptions="CenterAndExpand" FontFamily="{StaticResource RegularFontFamily}" />
             <StackLayout Grid.Row="2" Grid.Column="1" Padding="20,0,20,0">
-                <Button Text="Let's go" Style="{StaticResource StartButton}" />
-                <Button Text="Go back" Style="{StaticResource GuideButton}" />
+                <Button Text="Let's go" Style="{StaticResource StartButton}" Clicked="CarouselForward" />
+                <Button x:Name="indexEndHere" Text="Go back" Style="{StaticResource GuideButton}" Clicked="CarouselBackward" IsEnabled="False" />
             </StackLayout>
         </Grid>
     </ContentPage>
-    
-    <ContentPage>
+
+    <ContentPage Title="PreQuestionPain" TabIndex="1">
         <Grid BackgroundColor="{StaticResource BackgroundColor}" Padding="0,30,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.2*" />
@@ -39,23 +40,20 @@
             </Grid.ColumnDefinitions>
             <Image Grid.Row="0" Grid.Column="1" Source="PainLevel" Aspect="AspectFit"/>
             <StackLayout Grid.Row="1" Grid.Column="1">
-                <Label Text="On a scale from 1 to 10, how much pain are you experiencing right now?" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
+                <Label Text="On a scale from 1 to 10, how much pain are you experiencing right now?" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontFamily="{StaticResource RegularFontFamily}" />
                 <StackLayout HorizontalOptions="CenterAndExpand" Padding="0,15,0,0">
-                    <Label Text="0-10" x:Name="painLvl" HorizontalOptions="Center" />
-                    <StackLayout Orientation="Horizontal">
-                        <Button Text="+" />
-                        <Button Text="-" />
-                    </StackLayout>
+                    <Label Text="0"  x:Name="painLvl" HorizontalOptions="Center" />
+                    <Stepper BindingContext="{x:Reference painLvl}" Value="{Binding Text, StringFormat='Pain: {0:F0}'}" HorizontalOptions="Center" Maximum="10" Minimum="1" Increment="1" />
                 </StackLayout>
             </StackLayout>
             <StackLayout Grid.Row="2" Grid.Column="1" Padding="20,0,20,0">
-                <Button Text="Next" Style="{StaticResource StartButton}" />
-                <Button Text="Go back" Style="{StaticResource SessionButton}"/>
+                <Button Text="Next" Style="{StaticResource StartButton}" Clicked="CarouselForward"/>
+                <Button Text="Go back" Style="{StaticResource SessionButton}" Clicked="CarouselBackward" />
             </StackLayout>
         </Grid>
     </ContentPage>
 
-    <ContentPage>
+    <ContentPage Title="PreQuestionPainkiller" TabIndex="2" >
         <Grid BackgroundColor="{StaticResource BackgroundColor}" Padding="0,30,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.2*" />
@@ -69,31 +67,27 @@
             </Grid.ColumnDefinitions>
             <Image Grid.Row="0" Grid.Column="1" Source="PainKillers" Aspect="AspectFit"/>
             <StackLayout Grid.Row="1" Grid.Column="1">
-                <Label Text="Have you taken any painkillers before this session?" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
-                <Switch Toggled="TakenPainKillers_Toggled" x:Name="TakenPainKillers" HorizontalOptions="Center" />
+                <Label Text="Have you taken any painkillers before this session?" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontFamily="{StaticResource RegularFontFamily}" />
+                <Switch Toggled="TakenPainKillers_Toggled" x:Name="TakenPainKillers" HorizontalOptions="Center" OnColor="{StaticResource ActiveColor}" />
                 <Label x:Name="PainkillerTakenResult" HorizontalOptions="Center" Text="No" />
                 <StackLayout Padding="0,10,0,10" x:Name="PainkillerOptions" IsVisible="False">
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                        <Label Text="1" />
-                        <Label Text="Painkiller" />
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                        <Button Text="-" />
-                        <Button Text="+" />
+                    <StackLayout Orientation="Horizontal" >
+                        <Entry Margin="0,0,5,0" x:Name="PainkillerAmount" Keyboard="Numeric" MaxLength="1" Placeholder="Amount" VerticalOptions="CenterAndExpand" FontSize="{StaticResource InputTextFontSize}" />
+                        <Picker x:Name="PainkillerList" Title="Select Painkiller" VerticalOptions="Center" FontSize="{StaticResource InputTextFontSize}" FontFamily="{StaticResource RegularFontFamily}" />
                     </StackLayout>
                     <StackLayout>
-                        <Entry Style="InputField" Placeholder="Andet?"/>
+                        <Entry FontSize="{StaticResource InputTextFontSize}" Placeholder="Andet?" />
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
             <StackLayout Grid.Row="2" Grid.Column="1" Padding="20,0,20,0">
-                <Button Text="Next" Style="{StaticResource StartButton}" />
-                <Button Text="Go back" Style="{StaticResource SessionButton}"/>
+                <Button Text="Next" Style="{StaticResource StartButton}" Clicked="CarouselForward"/>
+                <Button Text="Go back" Style="{StaticResource SessionButton}" Clicked="CarouselBackward" />
             </StackLayout>
         </Grid>
     </ContentPage>
 
-    <ContentPage>
+    <ContentPage Title="PreQuestionSymptombs" TabIndex="3">
         <Grid BackgroundColor="{StaticResource BackgroundColor}" Padding="0,30,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.2*" />
@@ -107,21 +101,21 @@
             </Grid.ColumnDefinitions>
             <Image Grid.Row="0" Grid.Column="1" Source="NewSymptoms" Aspect="AspectFit"/>
             <StackLayout Grid.Row="1" Grid.Column="1">
-                <Label Text="Did you develop any new symptombs?" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
-                <Switch Toggled="Symptombs_Toggled" x:Name="SymptombsDeveloped" HorizontalOptions="Center" />
+                <Label Text="Did you develop any new symptombs?" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontFamily="{StaticResource RegularFontFamily}" />
+                <Switch Toggled="Symptombs_Toggled" x:Name="SymptombsDeveloped" HorizontalOptions="Center" OnColor="{StaticResource ActiveColor}" />
                 <Label x:Name="SymptombsResult" HorizontalOptions="Center" Text="No" />
                 <Frame CornerRadius="5" HasShadow="False" Padding="0">
                 <Editor x:Name="SymptombsDescription" Style="{StaticResource CommentField}" Placeholder="Describe your symptombs" AutoSize="TextChanges" Opacity="0.5" BackgroundColor="#CCCCCC" MaxLength="100"/>
                 </Frame>
             </StackLayout>
             <StackLayout Grid.Row="2" Grid.Column="1" Padding="20,0,20,0">
-                <Button Text="Next" Style="{StaticResource StartButton}" />
-                <Button Text="Go back" Style="{StaticResource SessionButton}"/>
+                <Button Text="Next" Style="{StaticResource StartButton}" Clicked="CarouselForward" />
+                <Button Text="Go back" Style="{StaticResource SessionButton}" Clicked="CarouselBackward" />
             </StackLayout>
         </Grid>
     </ContentPage>
 
-    <ContentPage>
+    <ContentPage Title="PreQuestionComments" TabIndex="4">
         <Grid BackgroundColor="{StaticResource BackgroundColor}" Padding="0,30,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.2*" />
@@ -135,14 +129,14 @@
             </Grid.ColumnDefinitions>
             <Image Grid.Row="0" Grid.Column="1" Source="TrainActive" Aspect="AspectFit"/>
             <StackLayout Grid.Row="1" Grid.Column="1">
-                <Label Text="Before we start, do you have any comments?" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,0,0,10" />
+                <Label Text="Before we start, do you have any comments?" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,0,0,10" FontFamily="{StaticResource RegularFontFamily}" />
                 <Frame CornerRadius="5" HasShadow="False" Padding="0">
                 <Editor x:Name="QuestionnaireComment" Placeholder="Your comment" PlaceholderColor="Black" Style="{StaticResource CommentField}" BackgroundColor="White" MaxLength="150"/>
                 </Frame>
             </StackLayout>
             <StackLayout Grid.Row="2" Grid.Column="1" Padding="20,0,20,0">
-                <Button Text="Next" Style="{StaticResource StartButton}" />
-                <Button Text="Go back" Style="{StaticResource SessionButton}"/>
+                <Button Text="Let's Start" Style="{StaticResource StartButton}" Clicked="StartExerciseSession" />
+                <Button Text="Go back" Style="{StaticResource SessionButton}" Clicked="CarouselBackward" />
             </StackLayout>
         </Grid>
     </ContentPage>
