@@ -23,11 +23,7 @@ namespace PDGT.Pages
 		{
 			InitializeComponent ();
 
-            PreQuestionnaire p = new PreQuestionnaire();
-
-            p = QuestionnaireStore.GetPreQuestionnaire();
-
-            Console.WriteLine(p.Comments);
+            PreQuestionnaire p = QuestionnaireStore.GetPreQuestionnaire();
 
             BindingContext = _vm = new SessionViewModel();
 
