@@ -42,7 +42,6 @@
                      CornerRadius="45"                    
                      Grid.Row="1"
                      Grid.Column="1"/>
-
                 <Label Text="1/5"
                        Style="{StaticResource SetsCountLabel}"
                        Grid.Row="1"
@@ -70,7 +69,8 @@
                     Text="Finish set"
                     Style="{StaticResource StartButton}"
                     Grid.Row="3"
-                    Padding="10"/>
+                    Padding="10"
+                    Clicked="FinishSetBtn_Clicked"/>
 
             <Button x:Name="SkipExerciseBtn"
                     Text="Skip exercise"
