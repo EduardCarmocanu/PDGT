@@ -27,6 +27,8 @@ namespace PDGT.Pages
 
             p = QuestionnaireStore.GetPreQuestionnaire();
 
+            Console.WriteLine(p.Comments);
+
             BindingContext = _vm = new SessionViewModel();
 
             CarouselViews.ItemsSource = _vm._mockService.Exercises;

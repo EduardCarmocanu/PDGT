@@ -9,10 +9,10 @@ namespace PDGT.Stores
 {
     class QuestionnaireStore
     {
-        public static async void SetPreQuestionnaireAsync(PreQuestionnaire p)
+        public static void SetPreQuestionnaire(PreQuestionnaire p)
         {
             PreQuestionnaire CurrentPreQuestionnaire = p;
-            await BlobCache.LocalMachine.InsertObject<PreQuestionnaire>("PreQuestionnaire", CurrentPreQuestionnaire);
+            BlobCache.LocalMachine.InsertObject<PreQuestionnaire>("PreQuestionnaire", CurrentPreQuestionnaire).Wait();
         }
 
         public static PreQuestionnaire GetPreQuestionnaire()

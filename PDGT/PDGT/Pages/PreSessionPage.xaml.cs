@@ -105,7 +105,7 @@ namespace PDGT.Pages
 
         private async void StartExerciseSession(object sender, EventArgs e)
         {
-            QuestionnaireStore.SetPreQuestionnaireAsync(PreQuestions);
+            QuestionnaireStore.SetPreQuestionnaire(PreQuestions);
             await Navigation.PushAsync(new SessionActivePage());
             
         }
