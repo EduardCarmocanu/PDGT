@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PDGT.Pages.PostSessionPage"
              NavigationPage.HasNavigationBar="False">
-    
+
     <ContentPage Title="PostQuestionStart" TabIndex="0" >
         <Grid BackgroundColor="{StaticResource BackgroundColor}" RowSpacing="50" Padding="0,50,0,0">
             <Grid.RowDefinitions>
@@ -17,10 +17,10 @@
                 <ColumnDefinition Width="0.2*" />
             </Grid.ColumnDefinitions>
             <Image Grid.Row="0" Grid.Column="1" Source="QuestionActive" />
-            <Label Grid.Row="1" Grid.Column="1"  HorizontalTextAlignment="Center" Text="Before finishing this sessions we just need to know a bit more" HorizontalOptions="CenterAndExpand" FontFamily="{StaticResource RegularFontFamily}" />
+            <Label Grid.Row="1" Grid.Column="1"  HorizontalTextAlignment="Center" Text="Before finishing up we have a few more questions" HorizontalOptions="CenterAndExpand" FontFamily="{StaticResource RegularFontFamily}" />
             <StackLayout Grid.Row="2" Grid.Column="1" Padding="20,0,20,0">
                 <Button Text="Let's go" Style="{StaticResource QuestionnaireButton}" Clicked="CarouselForward" />
-                
+
             </StackLayout>
         </Grid>
     </ContentPage>
@@ -41,8 +41,8 @@
             <StackLayout Grid.Row="1" Grid.Column="1">
                 <Label Text="On a scale from 1 to 10, how much pain are you experiencing right now?" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontFamily="{StaticResource RegularFontFamily}" />
                 <StackLayout HorizontalOptions="CenterAndExpand" Padding="0,15,0,0">
-                    <Label Text="0"  x:Name="painLvl" HorizontalOptions="Center" />
-                    <Stepper BindingContext="{x:Reference painLvl}" Style="{StaticResource ActiveColorLabel}" Value="{Binding Text, StringFormat='Pain: {0:F0}'}" HorizontalOptions="Center" Maximum="10" Minimum="1" Increment="1" />
+                    <Label Text="0"  x:Name="painLvl" Style="{StaticResource ActiveColorLabel}" HorizontalOptions="Center" />
+                    <Stepper BindingContext="{x:Reference painLvl}" Value="{Binding Text, StringFormat='Pain: {0:F0}'}" HorizontalOptions="Center" Maximum="10" Minimum="1" Increment="1" />
                 </StackLayout>
             </StackLayout>
             <StackLayout Grid.Row="2" Grid.Column="1" Padding="20,0,20,0">
@@ -129,7 +129,7 @@
             </Grid.ColumnDefinitions>
             <Image Grid.Row="0" Grid.Column="1" Source="TrainActive" Aspect="AspectFit"/>
             <StackLayout Grid.Row="1" Grid.Column="1">
-                <Label Text="Any comments before we finish the session?" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,0,0,10" FontFamily="{StaticResource RegularFontFamily}" />
+                <Label Text="Before we finish, do you have any comments?" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,0,0,10" FontFamily="{StaticResource RegularFontFamily}" />
                 <Frame CornerRadius="5" HasShadow="False" Padding="0">
                     <Editor x:Name="QuestionnaireComment" Placeholder="Your comment" PlaceholderColor="Black" Style="{StaticResource CommentField}" BackgroundColor="White" MaxLength="150"/>
                 </Frame>
