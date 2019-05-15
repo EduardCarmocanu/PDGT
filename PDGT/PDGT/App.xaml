@@ -137,6 +137,11 @@
                 <Setter Property="FontFamily" Value="{StaticResource RegularFontFamily}"/>
                 <Setter Property="FontSize" Value="{StaticResource InputTextFontSize}"/>
             </Style>
+            <Style x:Key="SetsCountLabel" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource BoldFontFamily}"/>
+                <Setter Property="TextColor" Value="{StaticResource PlainWhite}"/>
+                <Setter Property="FontSize" Value="{StaticResource MediumHeadingFontSize}"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
